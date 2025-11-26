@@ -14,7 +14,6 @@
             <div class="portfolio-container">
                 <div class="section-header">
                     <h2>Portfolio</h2>
-                    <p>ブランド・サービスを<br>最適に綺麗に伝える</p>
                 </div>
                 
                 <div class="portfolio-grid">
