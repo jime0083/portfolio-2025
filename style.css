@@ -1,0 +1,533 @@
+/*
+Theme Name: Portfolio 2025
+Author: Antigravity
+Description: Custom theme for Portfolio 2025 based on Figma designs.
+Version: 1.0
+*/
+
+/* Reset & Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    /* background: rgba(0,0,0,0.5); Optional: background for visibility */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-left: 100px;
+    /* Offset for sidebar if needed, or just keep it clean */
+}
+
+.site-title {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-navigation a {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Sidebar (Home Only) */
+.home-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 120px 0 40px;
+    box-sizing: border-box;
+    align-items: center;
+    z-index: 900;
+    /* border-right: 1px solid rgba(255,255,255,0.1); Optional border */
+}
+
+.sidebar-navigation ul {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.sidebar-navigation a {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.sidebar-social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.sidebar-social img {
+    width: 20px;
+    height: auto;
+    display: block;
+}
+
+/* Main Content */
+.site-main {
+    margin-left: 100px;
+    /* Space for sidebar */
+    padding-top: 0;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/images/スクリーンショット (161) 1.png');
+    /* Using the uploaded image as bg or similar */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 8rem;
+    color: #ff6b81;
+    margin: 0;
+    line-height: 1;
+    /* Overlay text style */
+}
+
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #333;
+    width: 100%;
+}
+
+.portfolio-container {
+    max-width: 1360px;
+    padding: 0 136px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 4rem;
+    color: #ff6b81;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+
+.section-header p {
+    color: #ff6b81;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 60px;
+    /* Vertical gap 80px, Horizontal gap 60px */
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-thumbnail {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.portfolio-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-thumbnail img {
+    transform: scale(1.05);
+}
+
+.portfolio-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6b81;
+    /* Pink background */
+    color: #333;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+.portfolio-title {
+    font-size: 1.1rem;
+    color: #ff6b81;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ff6b81;
+    font-weight: normal;
+}
+
+/* Overlay for the first item (example) */
+.portfolio-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    /* Hidden by default, or specific to design */
+}
+
+/* Responsive (Hidden for now as requested, but good to have base) */
+@media (max-width: 1024px) {
+    .portfolio-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-sidebar {
+        display: none;
+    }
+
+    .site-main {
+        margin-left: 0;
+    }
+
+    .header-container {
+        padding-left: 0;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Profile Section */
+.profile-section {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.en-name {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ccc;
+}
+
+.profile-text p {
+    font-size: 0.95rem;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.profile-image-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.placeholder-shape {
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d9;
+    /* Light gray placeholder */
+    /* Creating an L-shape look with clip-path or just a block for now as per request for placeholder */
+    /* If strict L-shape is needed, we can use clip-path or multiple divs. 
+       Based on image, it looks like a large gray block. Let's keep it simple block for now unless specified. */
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image-placeholder {
+        min-height: 300px;
+    }
+}
+
+/* Contact Page */
+.contact-top {
+    padding-top: 80px;
+    /* Space below header */
+    width: 100%;
+}
+
+.contact-container {
+    max-width: 1360px;
+    padding: 0 136px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: left;
+    /* Ensure left alignment */
+}
+
+.contact-title {
+    font-size: 200px;
+    color: #ff6b81;
+    margin: 0 0 80px 0;
+    /* 80px margin bottom */
+    line-height: 1;
+    font-weight: bold;
+}
+
+.contact-subtitle-1 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 24px 0;
+    /* 24px margin bottom */
+    font-weight: bold;
+}
+
+.contact-subtitle-2 {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .contact-container {
+        padding: 0 40px;
+    }
+
+    .contact-title {
+        font-size: 120px;
+        /* Responsive adjustment */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 80px;
+        /* Responsive adjustment */
+        margin-bottom: 40px;
+    }
+}
+
+/* Contact Form */
+.contact-main {
+    margin-top: 48px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Vertical gap between rows if needed, though rows handle it */
+}
+
+.contact-row {
+    display: flex;
+    gap: 88px;
+    margin-bottom: 24px;
+}
+
+.contact-row.full-width {
+    gap: 0;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-title {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 0;
+    /* 0px gap to input */
+    line-height: 1.5;
+}
+
+.contact-input {
+    width: 480px;
+    height: 48px;
+    background-color: #fff;
+    border: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-textarea {
+    width: 1088px;
+    height: 160px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact-submit {
+    width: 1088px;
+    height: 48px;
+    background-color: #fff;
+    /* Default bg */
+    color: #333;
+    /* Default text color */
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-submit:hover {
+    background-color: #343434;
+    border: 2px solid #D1597B;
+    color: #D1597B;
+}
+
+@media (max-width: 1200px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-input,
+    .contact-textarea,
+    .contact-submit {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Work Page */
+.work-top {
+    padding-top: 80px;
+    /* Space below header */
+    width: 100%;
+}
+
+.work-container {
+    max-width: 1360px;
+    padding: 0 136px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: left;
+    /* Ensure left alignment */
+}
+
+.work-title {
+    font-size: 200px;
+    color: #ff6b81;
+    margin: 0 0 80px 0;
+    /* 80px margin bottom */
+    line-height: 1;
+    font-weight: bold;
+}
+
+.work-subtitle-1 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 24px 0;
+    /* 24px margin bottom */
+    font-weight: bold;
+}
+
+.work-subtitle-2 {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .work-container {
+        padding: 0 40px;
+    }
+
+    .work-title {
+        font-size: 120px;
+        /* Responsive adjustment */
+    }
+}
