@@ -199,7 +199,7 @@ ul {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 51px;
+    padding-top: 0px;
     /* 上部に51pxの空白 */
 }
 
@@ -315,30 +315,192 @@ ul {
     /* Hidden by default, or specific to design */
 }
 
-/* Responsive (Hidden for now as requested, but good to have base) */
+/* Responsive Image for Profile (Hidden by default) */
+.profile-image-responsive {
+    display: none;
+    margin-bottom: 24px;
+    text-align: right;
+    /* 右寄せ */
+}
+
+.profile-image-responsive img {
+    width: 480px;
+    height: 360px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .portfolio-item {
+        width: 360px;
+    }
+
+    .portfolio-thumbnail {
+        width: 360px;
+        aspect-ratio: 360 / 240;
+    }
+
+    .portfolio-thumbnail img {
+        width: 360px;
+    }
+}
+
 @media (max-width: 1024px) {
     .portfolio-container {
         padding: 0 40px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
+
+    /* Sidebar & Layout */
     .home-sidebar {
         display: none;
     }
 
     .site-main {
         margin-left: 0;
+        width: 100%;
     }
 
     .header-container {
         padding-left: 0;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    /* Hero Section Full Width */
+    .hero-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        max-width: 100vw;
+        border-radius: 0;
+        /* 角丸解除 */
     }
 
+    /* Portfolio Section */
+    .portfolio-container {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        /* 中央寄せ */
+        width: 480px;
+        /* 幅を480pxに固定 */
+        padding: 0;
+        /* パディング解除 */
+        margin: 0 auto;
+    }
+
+    .portfolio-section1 {
+        width: 100%;
+        /* align-items: center; を削除して左揃えに */
+    }
+
+    .portfolio-section2 {
+        width: 100%;
+        align-items: center;
+        /* アイテムを中央寄せ */
+    }
+
+    .portfolio-section2 {
+        padding-top: 0;
+    }
+
+    .portfolio-item {
+        width: 480px;
+        /* 幅を480pxに変更 */
+        margin-bottom: 16px !important;
+    }
+
+    .portfolio-thumbnail {
+        width: 480px;
+        aspect-ratio: 480 / 360;
+        /* アスペクト比変更 */
+    }
+
+    .portfolio-thumbnail img {
+        width: 480px;
+    }
+
+    /* Profile Section */
+    .profile-section .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 480px;
+        /* 幅を480pxに固定 */
+    }
+
+    .profile-text-column {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-image-column {
+        display: none;
+    }
+
+    .profile-image-responsive {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+
+    /* Hero Section Full Width Fix */
+    .hero-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        max-width: 100vw;
+    }
+
+    .hero-content h1 {
+        display: none;
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+        width: 100%;
+        /* 幅を100%に */
+        max-width: 360px;
+        /* 最大幅を360pxに制限 */
+        margin: 0 auto;
+        /* 中央寄せ */
+    }
+
+    .portfolio-item {
+        width: 100%;
+        /* 親要素に合わせる */
+        max-width: 360px;
+    }
+
+    .portfolio-thumbnail {
+        width: 100%;
+        aspect-ratio: 360 / 240;
+    }
+
+    .portfolio-thumbnail img {
+        width: 100%;
+    }
+
+    /* Profile Section */
+    .profile-section .portfolio-container {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .profile-image-responsive img {
+        width: 100%;
+        max-width: 360px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 既存の768px以下のスタイルは960px以下に含まれるか、500px以下で上書きされるため、
+       特有の調整が必要なければそのままで良いが、念のため残しておく */
     .section-header h2 {
         font-size: 48px;
     }

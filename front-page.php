@@ -75,6 +75,10 @@
                     <div class="section-header">
                         <h2>Profile</h2>
                     </div>
+                    <!-- Responsive Image: Visible only on small screens -->
+                    <div class="profile-image-responsive">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rectangle 15.png" alt="Profile Image">
+                    </div>
                     <div class="profile-text">
                         <h3 class="profile-name">栗田 孟 <span class="en-name">Hajime Kurita</span></h3>
                         <p>
@@ -89,7 +93,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Profile Images -->
+                <!-- Right Column: Profile Images (Hidden on small screens) -->
                 <div class="profile-image-column">
                     <div class="profile-images">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rectangle 14.png" alt="Profile Image 1" class="profile-img-1">
