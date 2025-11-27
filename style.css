@@ -56,7 +56,7 @@ ul {
 .site-title {
     color: #ff6b81;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 19px;
     margin: 0;
 }
 
@@ -68,7 +68,7 @@ ul {
 .main-navigation a {
     color: #ff6b81;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -86,7 +86,8 @@ ul {
     box-sizing: border-box;
     align-items: center;
     z-index: 900;
-    /* border-right: 1px solid rgba(255,255,255,0.1); Optional border */
+    /* Gradient background from left (black opacity 0.3) to right (black opacity 0) */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
 }
 
 .sidebar-navigation ul {
@@ -100,7 +101,7 @@ ul {
 .sidebar-navigation a {
     color: #ff6b81;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 14px;
     letter-spacing: 0.1em;
 }
 
@@ -129,15 +130,18 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('assets/images/スクリーンショット (161) 1.png');
-    /* Using the uploaded image as bg or similar */
+    background-image: url('assets/images/garden office3 1.png');
     background-size: cover;
     background-position: center;
     position: relative;
+    margin-left: -100px;
+    /* サイドバーの幅分を相殺 */
+    width: 100vw;
+    /* 画面全体の幅 */
 }
 
 .hero-content h1 {
-    font-size: 8rem;
+    font-size: 128px;
     color: #ff6b81;
     margin: 0;
     line-height: 1;
@@ -152,58 +156,131 @@ ul {
 
 .portfolio-container {
     max-width: 1360px;
-    padding: 0 136px;
+    padding: 0 136px 0 36px;
+    /* 左36px、右136px */
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    gap: 60px;
+}
+
+/* Left Column */
+.portfolio-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 32px;
 }
 
 .section-header h2 {
-    font-size: 4rem;
+    font-size: 64px;
     color: #ff6b81;
-    margin: 0 0 20px;
+    margin: 0;
     font-weight: bold;
+    line-height: 1;
 }
 
 .section-header p {
     color: #ff6b81;
-    font-size: 1.2rem;
+    font-size: 19px;
     line-height: 1.6;
     margin: 0;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 60px;
-    /* Vertical gap 80px, Horizontal gap 60px */
+.portfolio-section1 .portfolio-item1 {
+    margin-bottom: 160px;
+}
+
+/* Right Column */
+.portfolio-section2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 51px;
+    /* 上部に51pxの空白 */
+}
+
+.portfolio-section2 .portfolio-item3 {
+    margin-bottom: 160px;
 }
 
 .portfolio-item {
     display: flex;
     flex-direction: column;
+    width: 480px;
+    /* 画像の幅に合わせて固定 */
 }
 
 .portfolio-thumbnail {
     position: relative;
-    width: 100%;
+    width: 480px;
+    aspect-ratio: 480 / 365;
+    /* アスペクト比を固定してサイズを統一 */
     margin-bottom: 15px;
     border-radius: 4px;
     overflow: hidden;
+    border: 3px solid transparent;
+    /* デフォルトは透明 */
+    transition: border 0.3s ease;
 }
 
 .portfolio-thumbnail img {
-    width: 100%;
-    height: auto;
+    width: 480px;
+    height: 100%;
+    /* 高さをコンテナに合わせる */
+    object-fit: cover;
+    /* アスペクト比を維持してトリミング */
     display: block;
     transition: transform 0.3s ease;
 }
 
+.portfolio-item:hover .portfolio-thumbnail {
+    border: 3px solid #D1597B;
+    /* ホバー時にピンクの枠線 */
+}
+
 .portfolio-item:hover .portfolio-thumbnail img {
     transform: scale(1.05);
+}
+
+/* ホバー時のオーバーレイ */
+.portfolio-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.portfolio-item:hover .portfolio-thumbnail::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* ホバー時に黒のオーバーレイ */
+}
+
+/* リンクアイコン */
+.portfolio-link-icon {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+}
+
+.portfolio-item:hover .portfolio-link-icon {
+    opacity: 1;
 }
 
 .portfolio-tag {
@@ -213,13 +290,13 @@ ul {
     background-color: #ff6b81;
     /* Pink background */
     color: #333;
-    font-size: 0.8rem;
+    font-size: 13px;
     padding: 5px 15px;
     font-weight: bold;
 }
 
 .portfolio-title {
-    font-size: 1.1rem;
+    font-size: 18px;
     color: #ff6b81;
     margin: 0;
     padding-bottom: 10px;
@@ -263,10 +340,11 @@ ul {
     }
 
     .section-header h2 {
-        font-size: 3rem;
+        font-size: 48px;
     }
 }
 
+/* Profile Section */
 /* Profile Section */
 .profile-section {
     margin-top: 80px;
@@ -274,50 +352,77 @@ ul {
     width: 100%;
 }
 
-.profile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+.profile-text-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-text-column .section-header {
+    margin-bottom: 24px;
+    height: auto;
+    /* Portfolioセクションの設定をリセット */
+    transform: none;
+    /* Portfolioセクションの設定をリセット */
+}
+
+.profile-image-column {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    /* 画像が表示される高さを確保 */
 }
 
 .profile-name {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     display: flex;
     align-items: baseline;
     gap: 15px;
+    margin-top: 0 !important;
 }
 
 .en-name {
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: normal;
     color: #ccc;
 }
 
 .profile-text p {
-    font-size: 0.95rem;
+    font-size: 15px;
     line-height: 2;
     margin-bottom: 20px;
 }
 
-.profile-image-placeholder {
+.profile-images {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 400px;
 }
 
-.placeholder-shape {
-    width: 100%;
-    height: 100%;
-    background-color: #d9d9d9;
-    /* Light gray placeholder */
-    /* Creating an L-shape look with clip-path or just a block for now as per request for placeholder */
-    /* If strict L-shape is needed, we can use clip-path or multiple divs. 
-       Based on image, it looks like a large gray block. Let's keep it simple block for now unless specified. */
-    min-height: 500px;
+.profile-img-1 {
+    position: absolute;
+    width: 280px;
+    height: 420px;
+    object-fit: cover;
+    top: 50px;
+    /* 上部に50pxの空白 */
+    left: 0;
+    /* 左端 */
+    z-index: 1;
+}
+
+.profile-img-2 {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    object-fit: cover;
+    bottom: 0;
+    /* 下部 */
+    right: 0;
+    /* 右端 */
+    z-index: 2;
 }
 
 @media (max-width: 768px) {
