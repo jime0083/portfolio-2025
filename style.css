@@ -210,7 +210,7 @@ ul {
 }
 
 .hero-section {
-    height: 100vh;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -720,24 +720,23 @@ ul {
 }
 
 .contact-title {
-    font-size: 200px;
+    font-size: 200px !important;
     color: #ff6b81;
-    margin: 0 0 80px 0;
+    margin: 0;
+    margin-bottom: 24px !important;
     /* 80px margin bottom */
     line-height: 1;
     font-weight: bold;
 }
 
 .contact-subtitle-1 {
-    font-size: 24px;
+    font-size: 24px !important;
     color: #fff;
-    margin: 0 0 24px 0;
-    /* 24px margin bottom */
     font-weight: bold;
 }
 
 .contact-subtitle-2 {
-    font-size: 16px;
+    font-size: 14px !important;
     color: #fff;
     margin: 0;
     line-height: 1.6;
@@ -1009,16 +1008,21 @@ ul {
     background-position: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    /* justify-content: center; 削除: コンテナで制御 */
+    /* text-align: center; 削除: 左揃えに */
     color: #fff;
     position: relative;
 }
 
 .contact-container {
-    max-width: 1000px;
+    width: 100%;
+    /* Flexアイテムとして幅を確保 */
+    max-width: 1088px;
+    /* 1360px - 136px*2 */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
+    /* モバイル用パディング */
+    box-sizing: border-box;
 }
 
 .contact-title {
@@ -1041,4 +1045,10 @@ ul {
 
 .contact-subtitle-2 {
     font-size: 16px;
+}
+
+/* Contact Page Layout Fix */
+.page-template-page-contact .site-main {
+    margin-left: 0;
+    width: 100%;
 }
