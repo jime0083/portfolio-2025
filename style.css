@@ -840,17 +840,106 @@ ul {
 }
 
 @media (max-width: 1200px) {
+
+    /* 1200px以下: 横並び維持、サイズ縮小 */
+    .contact-container {
+        max-width: 760px !important;
+        /* 760px + 48px padding */
+    }
+
+    .contact-row {
+        gap: 40px;
+        /* 80px -> 40px */
+    }
+
+    .contact-input {
+        width: 360px;
+    }
+
+    .contact-textarea {
+        width: 760px;
+        /* 360*2 + 40 */
+    }
+
+    .contact-submit {
+        width: 760px !important;
+    }
+
+    .contact-form {
+        width: 760px !important;
+    }
+}
+
+@media (max-width: 960px) {
+
+    /* 960px以下: 1列配置 */
+    .contact-container {
+        max-width: 480px !important;
+        /* 480px + 48px padding */
+    }
+
     .contact-row {
         flex-direction: column;
         gap: 24px;
     }
 
-    .contact-input,
-    .contact-textarea,
-    .field-image {
-        width: 100%;
+    .contact-input {
+        width: 480px;
+    }
+
+    .contact-textarea {
+        width: 480px;
+    }
+
+    .contact-submit {
+        width: 480px !important;
+    }
+
+    .contact-form {
+        width: 480px !important;
+    }
+
+    .contact-title {
+        font-size: 64px !important;
+    }
+
+    .contact-subtitle-1 {
+        font-size: 16px !important;
+    }
+
+    .contact-subtitle-2 {
+        display: none;
+    }
+
+    .contact-top {
+        height: 240px !important;
     }
 }
+
+@media (max-width: 500px) {
+
+    /* 500px以下: 幅340px (左右マージン80px確保のため 500-160=340) */
+    .contact-container {
+        max-width: 340px !important;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        /* 中央寄せ */
+    }
+
+    .contact-form {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .contact-input,
+    .contact-textarea,
+    .contact-submit {
+        width: 100% !important;
+    }
+}
+
+
 
 /* Work Ex Section (Past Case Studies) */
 .work-ex {
