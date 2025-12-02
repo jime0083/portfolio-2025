@@ -703,63 +703,7 @@ ul {
     }
 }
 
-/* Contact Page */
-.contact-top {
-    padding-top: 80px;
-    /* Space below header */
-    width: 100%;
-}
-
-.contact-container {
-    max-width: 1360px;
-    padding: 0 136px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    text-align: left;
-    /* Ensure left alignment */
-}
-
-.contact-title {
-    font-size: 200px !important;
-    color: #ff6b81;
-    margin: 0;
-    margin-bottom: 24px !important;
-    /* 80px margin bottom */
-    line-height: 1;
-    font-weight: bold;
-}
-
-.contact-subtitle-1 {
-    font-size: 24px !important;
-    color: #fff;
-    font-weight: bold;
-}
-
-.contact-subtitle-2 {
-    font-size: 14px !important;
-    color: #fff;
-    margin: 0;
-    line-height: 1.6;
-}
-
-@media (max-width: 1024px) {
-    .contact-container {
-        padding: 0 40px;
-    }
-
-    .contact-title {
-        font-size: 120px;
-        /* Responsive adjustment */
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-title {
-        font-size: 80px;
-        /* Responsive adjustment */
-        margin-bottom: 40px;
-    }
-}
+/* Contact Page definitions moved to Common Section */
 
 /* Contact Form */
 .contact-main {
@@ -843,8 +787,8 @@ ul {
 
     /* 1200px以下: 横並び維持、サイズ縮小 */
     .contact-container {
-        max-width: 760px !important;
-        /* 760px + 48px padding */
+        max-width: 808px !important;
+        /* Workに合わせて808pxに変更 */
     }
 
     .contact-row {
@@ -874,8 +818,8 @@ ul {
 
     /* 960px以下: 1列配置 */
     .contact-container {
-        max-width: 480px !important;
-        /* 480px + 48px padding */
+        max-width: 528px !important;
+        /* Workに合わせて528pxに変更 */
     }
 
     .contact-row {
@@ -911,9 +855,7 @@ ul {
         display: none;
     }
 
-    .contact-top {
-        height: 240px !important;
-    }
+    /* contact-top height definition moved to common responsive section */
 }
 
 @media (max-width: 500px) {
@@ -922,7 +864,8 @@ ul {
     .contact-container {
         max-width: 340px !important;
         width: 100%;
-        padding: 0;
+        padding: 0 !important;
+        /* Workに合わせて!important追加 */
         margin: 0 auto;
         /* 中央寄せ */
     }
@@ -1049,48 +992,7 @@ ul {
 }
 
 /* Work Page */
-.work-top {
-    width: 100%;
-    height: 700px;
-    background-image: url('assets/images/ContactTopImg.png');
-    /* Contactと同じ画像を使用 */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    position: relative;
-}
-
-.work-container {
-    width: 100%;
-    max-width: 1088px;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-}
-
-.work-title {
-    font-size: 60px;
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
-.work-subtitle-1,
-.work-subtitle-2 {
-    color: #D1597B;
-    font-weight: bold;
-    line-height: 1.8;
-}
-
-.work-subtitle-1 {
-    font-size: 20px;
-    margin-bottom: 24px;
-}
-
-.work-subtitle-2 {
-    font-size: 16px;
-}
+/* Work Top definitions moved to Common Section */
 
 /* Work Field Section */
 .work-field {
@@ -1236,6 +1138,36 @@ ul {
         height: 160px;
         padding: 20px;
     }
+
+    .field-title {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .skills-title {
+        font-size: 18px;
+    }
+
+    .field-description {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .skills-list {
+        font-size: 12px;
+    }
+
+    .field-subtitle {
+        font-size: 8px;
+    }
+
+    .field-header {
+        margin-bottom: 8px;
+    }
+
+    .skills-list {
+        margin: 0;
+    }
 }
 
 @media (max-width: 960px) {
@@ -1255,7 +1187,8 @@ ul {
         display: none;
     }
 
-    .work-top {
+    .work-top,
+    .contact-top {
         height: 240px !important;
     }
 
@@ -1268,7 +1201,8 @@ ul {
 
     .field-image {
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 16px;
+        /* 16pxの空白 */
     }
 
     .field-main {
@@ -1278,53 +1212,30 @@ ul {
         /* 不透明にするか、そのままか。そのままにする */
         padding: 24px;
     }
+
+    .field-list {
+        gap: 40px;
+        /* 80px -> 40px */
+    }
+
+    .work-ex {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 500px) {
     .work-container {
         max-width: 340px !important;
         width: 100%;
-        padding: 0;
+        padding: 0 !important;
         margin: 0 auto;
     }
 }
 
-.work-title {
-    font-size: 200px;
-    color: #ff6b81;
-    margin: 0 0 80px 0;
-    /* 80px margin bottom */
-    line-height: 1;
-    font-weight: bold;
-}
+/* Old Work Title definitions removed */
 
-.work-subtitle-1 {
-    font-size: 24px;
-    color: #fff;
-    margin: 0 0 24px 0;
-    /* 24px margin bottom */
-    font-weight: bold;
-}
-
-.work-subtitle-2 {
-    font-size: 16px;
-    color: #fff;
-    margin: 0;
-    line-height: 1.6;
-}
-
-@media (max-width: 1024px) {
-    .work-container {
-        padding: 0 40px;
-    }
-
-    .work-title {
-        font-size: 120px;
-        /* Responsive adjustment */
-    }
-}
-
-/* Contact Page */
+/* Common Top Section for Work & Contact */
+.work-top,
 .contact-top {
     width: 100%;
     height: 700px;
@@ -1333,43 +1244,41 @@ ul {
     background-position: center;
     display: flex;
     align-items: center;
-    /* justify-content: center; 削除: コンテナで制御 */
-    /* text-align: center; 削除: 左揃えに */
     color: #fff;
     position: relative;
 }
 
+.work-container,
 .contact-container {
     width: 100%;
-    /* Flexアイテムとして幅を確保 */
     max-width: 1088px;
-    /* 1360px - 136px*2 */
     margin: 0 auto;
     padding: 0 24px;
-    /* モバイル用パディング */
     box-sizing: border-box;
 }
 
+.work-title,
 .contact-title {
     font-size: 60px;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
-.contact-subtitle-1,
-.contact-subtitle-2 {
+.work-subtitle-1,
+.contact-subtitle-1 {
+    font-size: 20px;
     color: #D1597B;
     font-weight: bold;
     line-height: 1.8;
-}
-
-.contact-subtitle-1 {
-    font-size: 20px;
     margin-bottom: 24px;
 }
 
+.work-subtitle-2,
 .contact-subtitle-2 {
     font-size: 16px;
+    color: #D1597B;
+    font-weight: bold;
+    line-height: 1.8;
 }
 
 /* Contact Page Layout Fix */
