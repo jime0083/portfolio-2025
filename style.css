@@ -972,12 +972,21 @@ ul {
 
 .case-content {
     display: flex;
-    gap: 24px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    /* 縦並び */
+    gap: 8px;
+    /* 画像とカテゴリの間 */
+    margin-bottom: 24px;
+    /* 下線との間 */
 }
 
 .case-image {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    /* 画像とカテゴリを中央揃え */
+    gap: 8px;
+    /* 画像とカテゴリの間隔 */
 }
 
 .case-image img {
@@ -994,13 +1003,15 @@ ul {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    margin: 0 0 16px 0;
+    margin: 0;
+    /* マージン削除 */
 }
 
 .case-title {
     font-size: 24px;
     color: #fff;
-    margin: 0 0 16px 0;
+    margin: 0 0 8px 0;
+    /* 8pxに変更 */
     font-weight: bold;
 }
 
@@ -1039,18 +1050,243 @@ ul {
 
 /* Work Page */
 .work-top {
-    padding-top: 80px;
-    /* Space below header */
     width: 100%;
+    height: 700px;
+    background-image: url('assets/images/ContactTopImg.png');
+    /* Contactと同じ画像を使用 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
 }
 
 .work-container {
-    max-width: 1360px;
-    padding: 0 136px;
+    width: 100%;
+    max-width: 1088px;
     margin: 0 auto;
+    padding: 0 24px;
     box-sizing: border-box;
-    text-align: left;
-    /* Ensure left alignment */
+}
+
+.work-title {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.work-subtitle-1,
+.work-subtitle-2 {
+    color: #D1597B;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.work-subtitle-1 {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.work-subtitle-2 {
+    font-size: 16px;
+}
+
+/* Work Field Section */
+.work-field {
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+.field-section-title {
+    font-size: 24px;
+    color: #D1597B;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.field-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* 重ね合わせのため */
+}
+
+.field-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.field-image {
+    width: 640px;
+    /* 画像幅固定 */
+    height: 360px;
+    /* 画像高さ固定 */
+    flex-shrink: 0;
+    /* 縮小しない */
+}
+
+.field-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 比率を維持してトリミング */
+    display: block;
+}
+
+.field-main {
+    width: 760px;
+    /* 幅固定 */
+    height: 240px;
+    /* 高さ固定 */
+    background-color: rgba(68, 68, 68, 0.8);
+    padding: 40px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    /* コンテンツ配置のため */
+    flex-direction: column;
+    justify-content: center;
+    /* 垂直中央 */
+    border-radius: 10px;
+}
+
+.field-item.reverse .field-main {
+    right: auto;
+    left: 0;
+    /* 左側に配置 */
+}
+
+.field-header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.field-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #fff;
+    line-height: 1;
+}
+
+.field-subtitle {
+    font-size: 14px;
+    color: #D1597B;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+    padding-bottom: 2px;
+    /* 微調整 */
+}
+
+.field-description {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.field-skills {
+    border-top: none;
+    padding-top: 0;
+}
+
+.skills-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.skills-list {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Work Page Layout Fix */
+.page-template-page-work .site-main {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Work Page Responsive */
+@media (max-width: 1200px) {
+    .work-container {
+        max-width: 808px;
+    }
+
+    .field-image {
+        width: 426px;
+        height: 240px;
+    }
+
+    .field-main {
+        width: 480px;
+        height: 160px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 960px) {
+    .work-container {
+        max-width: 528px;
+    }
+
+    .work-title {
+        font-size: 64px !important;
+    }
+
+    .work-subtitle-1 {
+        font-size: 16px !important;
+    }
+
+    .work-subtitle-2 {
+        display: none;
+    }
+
+    .work-top {
+        height: 240px !important;
+    }
+
+    /* Field Section Responsive */
+    .field-item,
+    .field-item.reverse {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .field-image {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .field-main {
+        position: static;
+        width: 100%;
+        background-color: #444;
+        /* 不透明にするか、そのままか。そのままにする */
+        padding: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .work-container {
+        max-width: 340px !important;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
 }
 
 .work-title {
