@@ -6,6 +6,17 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="loading-screen" class="loading-screen">
+    <div class="loading-bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="loading-text">Loading<span class="loading-dots"></span></div>
+</div>
+<div class="transition-overlay-1"></div>
+<div class="transition-overlay-2"></div>
 <header id="masthead" class="site-header">
     <div class="header-container">
         <div class="site-branding">

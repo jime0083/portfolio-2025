@@ -66,3 +66,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Page Transition
+const body = document.body;
+
+// Page Load
+window.addEventListener('load', () => {
+  body.classList.add('is-loaded');
+});
+
+// Link Click
+document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetUrl = this.getAttribute('href');
+
+    // Remove loaded class to reset transform-origin if needed, 
+    // but here we want to start from left.
+    // Actually, we need to remove is-loaded and add is-transitioning
+    body.classList.remove('is-loaded');
+    body.classList.add('is-transitioning');
+
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 800); // Wait for animation (0.6s + 0.1s delay + buffer)
+  });
+});
+
