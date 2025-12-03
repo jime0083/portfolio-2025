@@ -7,7 +7,7 @@ get_header();
 
 <main id="primary" class="site-main">
     <section class="top">
-        <div class="top-container">
+        <div class="top-container slide-down-bounce">
             <h1 class="top-title">Work</h1>
             <p class="top-subtitle-1">ご用件が定まっていない状態からでもお気軽にお問い合わせください</p>
             <p class="top-subtitle-2">
@@ -19,15 +19,15 @@ get_header();
 
     <section class="work-field">
         <div class="work-container">
-            <h2 class="field-section-title">対応可能領域</h2>
+            <h2 class="field-section-title js-split-text">対応可能領域</h2>
             
             <div class="field-list">
                 <!-- Item 1 -->
                 <div class="field-item">
-                    <div class="field-image">
+                    <div class="field-image fade-in-left">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="フロントエンド開発">
                     </div>
-                    <div class="field-main">
+                    <div class="field-main fade-in-right">
                         <div class="field-header">
                             <h3 class="field-title">フロントエンド開発</h3>
                             <span class="field-subtitle">Frontend Development</span>
@@ -42,11 +42,11 @@ get_header();
 
                 <!-- Item 2 -->
                 <div class="field-item reverse">
-                    <div class="field-image">
+                    <div class="field-image fade-in-right">
                         <!-- Reusing Work1Pic.png as placeholder if specific image not provided, or use a gray box if preferred. Using Work1Pic for now as per instruction context -->
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="Webサイト制作">
                     </div>
-                    <div class="field-main">
+                    <div class="field-main fade-in-left">
                         <div class="field-header">
                             <h3 class="field-title">Webサイト制作</h3>
                             <span class="field-subtitle">Website production</span>
@@ -61,10 +61,10 @@ get_header();
 
                 <!-- Item 3 -->
                 <div class="field-item">
-                    <div class="field-image">
+                    <div class="field-image fade-in-left">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="Webデザイン">
                     </div>
-                    <div class="field-main">
+                    <div class="field-main fade-in-right">
                         <div class="field-header">
                             <h3 class="field-title">Webデザイン</h3>
                             <span class="field-subtitle">Web design</span>
@@ -82,11 +82,11 @@ get_header();
 
     <section class="work-ex">
         <div class="work-container">
-            <h2 class="ex-section-title">過去の事例紹介(一部)</h2>
+            <h2 class="ex-section-title js-split-text">過去の事例紹介(一部)</h2>
             
             <div class="case-study-list">
                 <!-- Case Study 1 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
@@ -106,7 +106,7 @@ get_header();
                 </div>
 
                 <!-- Case Study 2 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
@@ -126,7 +126,7 @@ get_header();
                 </div>
 
                 <!-- Case Study 3 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
@@ -146,7 +146,7 @@ get_header();
                 </div>
 
                 <!-- Case Study 4 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
@@ -166,7 +166,7 @@ get_header();
                 </div>
 
                 <!-- Case Study 5 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
@@ -186,7 +186,7 @@ get_header();
                 </div>
 
                 <!-- Case Study 6 -->
-                <div class="case-study">
+                <div class="case-study fade-in-up">
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">

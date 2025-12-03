@@ -1331,6 +1331,18 @@ ul {
     transform: translateY(0);
 }
 
+/* Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Split Text Animation */
 .js-split-text span {
     opacity: 0;

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, observerOptions);
 
     // Observe elements with specific classes
-    const targets = document.querySelectorAll('.slide-down-bounce, .fade-in-left, .fade-in-right, .js-split-text');
+    const targets = document.querySelectorAll('.slide-down-bounce, .fade-in-left, .fade-in-right, .fade-in-up, .js-split-text');
     targets.forEach(target => {
         observer.observe(target);
     });
