@@ -7,7 +7,7 @@ get_header();
 
 <main id="primary" class="site-main">
     <section class="top">
-        <div class="top-container">
+        <div class="top-container slide-down-bounce">
             <h1 class="top-title">Contact</h1>
             <p class="top-subtitle-1">ご用件が定まっていない状態からでもお気軽にお問い合わせください</p>
             <p class="top-subtitle-2">
@@ -18,7 +18,7 @@ get_header();
     </section>
 
     <section class="contact-main">
-        <div class="contact-container">
+        <div class="contact-container slide-down-bounce">
             <form action="#" method="post" class="contact-form">
                 <!-- Row 1 -->
                 <div class="contact-row">
