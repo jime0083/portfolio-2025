@@ -6,11 +6,11 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="contact-top">
-        <div class="contact-container">
-            <h1 class="contact-title">Contact</h1>
-            <p class="contact-subtitle-1">ご用件が定まっていない状態からでもお気軽にお問い合わせください</p>
-            <p class="contact-subtitle-2">
+    <section class="top">
+        <div class="top-container">
+            <h1 class="top-title">Contact</h1>
+            <p class="top-subtitle-1">ご用件が定まっていない状態からでもお気軽にお問い合わせください</p>
+            <p class="top-subtitle-2">
                 料金や納期などまずはお気軽にお問い合わせください<br>
                 フォームから送信いただきまたら翌営業日中に折り返しご連絡いたします。
             </p>

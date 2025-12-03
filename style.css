@@ -9,7 +9,7 @@ Version: 1.0
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 游明朝, YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", HG明朝E, "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
     background-color: #333;
     color: #fff;
 }
@@ -786,6 +786,7 @@ ul {
 @media (max-width: 1200px) {
 
     /* 1200px以下: 横並び維持、サイズ縮小 */
+    .top-container,
     .contact-container {
         max-width: 808px !important;
         /* Workに合わせて808pxに変更 */
@@ -817,6 +818,7 @@ ul {
 @media (max-width: 960px) {
 
     /* 960px以下: 1列配置 */
+    .top-container,
     .contact-container {
         max-width: 528px !important;
         /* Workに合わせて528pxに変更 */
@@ -843,15 +845,15 @@ ul {
         width: 480px !important;
     }
 
-    .contact-title {
+    .top-title {
         font-size: 64px !important;
     }
 
-    .contact-subtitle-1 {
+    .top-subtitle-1 {
         font-size: 16px !important;
     }
 
-    .contact-subtitle-2 {
+    .top-subtitle-2 {
         display: none;
     }
 
@@ -861,6 +863,7 @@ ul {
 @media (max-width: 500px) {
 
     /* 500px以下: 幅340px (左右マージン80px確保のため 500-160=340) */
+    .top-container,
     .contact-container {
         max-width: 340px !important;
         width: 100%;
@@ -1124,6 +1127,8 @@ ul {
 
 /* Work Page Responsive */
 @media (max-width: 1200px) {
+
+    .top-container,
     .work-container {
         max-width: 808px;
     }
@@ -1171,24 +1176,25 @@ ul {
 }
 
 @media (max-width: 960px) {
+
+    .top-container,
     .work-container {
         max-width: 528px;
     }
 
-    .work-title {
+    .top-title {
         font-size: 64px !important;
     }
 
-    .work-subtitle-1 {
+    .top-subtitle-1 {
         font-size: 16px !important;
     }
 
-    .work-subtitle-2 {
+    .top-subtitle-2 {
         display: none;
     }
 
-    .work-top,
-    .contact-top {
+    .top {
         height: 240px !important;
     }
 
@@ -1224,6 +1230,8 @@ ul {
 }
 
 @media (max-width: 500px) {
+
+    .top-container,
     .work-container {
         max-width: 340px !important;
         width: 100%;
@@ -1235,8 +1243,7 @@ ul {
 /* Old Work Title definitions removed */
 
 /* Common Top Section for Work & Contact */
-.work-top,
-.contact-top {
+.top {
     width: 100%;
     height: 700px;
     background-image: url('assets/images/ContactTopImg.png');
@@ -1248,6 +1255,7 @@ ul {
     position: relative;
 }
 
+.top-container,
 .work-container,
 .contact-container {
     width: 100%;
@@ -1257,24 +1265,24 @@ ul {
     box-sizing: border-box;
 }
 
-.work-title,
-.contact-title {
-    font-size: 60px;
+.top-title {
+    font-size: 200px;
     font-weight: bold;
-    margin-bottom: 40px;
+    color: #D1597B;
+    margin: 0;
+    margin-bottom: 24px;
+    line-height: 1;
 }
 
-.work-subtitle-1,
-.contact-subtitle-1 {
-    font-size: 20px;
+.top-subtitle-1 {
+    font-size: 24px;
     color: #D1597B;
     font-weight: bold;
     line-height: 1.8;
-    margin-bottom: 24px;
+    margin: 0;
 }
 
-.work-subtitle-2,
-.contact-subtitle-2 {
+.top-subtitle-2 {
     font-size: 16px;
     color: #D1597B;
     font-weight: bold;
@@ -1285,4 +1293,77 @@ ul {
 .page-template-page-contact .site-main {
     margin-left: 0;
     width: 100%;
+}
+
+/* Animations */
+/* Typewriter Cursor */
+#typewriter-text::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+    color: #ff6b81;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Slide Down & Bounce (Speedy) */
+.slide-down-bounce {
+    opacity: 0;
+    transform: translateY(-50px);
+    /* 上から */
+    transition: opacity 0.4s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* バウンス効果 */
+}
+
+.slide-down-bounce.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Split Text Animation */
+.js-split-text span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.js-split-text.is-inview span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.is-inview {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.is-inview {
+    opacity: 1;
+    transform: translateX(0);
 }
