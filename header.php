@@ -4,6 +4,15 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <script>
+        if (sessionStorage.getItem('visited') || sessionStorage.getItem('from_internal')) {
+            document.documentElement.classList.add('visited');
+            sessionStorage.setItem('visited', 'true');
+            sessionStorage.removeItem('from_internal');
+        } else {
+            sessionStorage.setItem('visited', 'true');
+        }
+    </script>
 </head>
 <body <?php body_class(); ?>>
 <div id="loading-screen" class="loading-screen">

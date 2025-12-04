@@ -72,7 +72,13 @@ const body = document.body;
 
 // Page Load
 window.addEventListener('load', () => {
-  body.classList.add('is-loaded');
+  if (document.documentElement.classList.contains('visited')) {
+    body.classList.add('is-loaded');
+  } else {
+    setTimeout(() => {
+      body.classList.add('is-loaded');
+    }, 500);
+  }
 });
 
 // Link Click
@@ -86,6 +92,9 @@ document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^=
     // Actually, we need to remove is-loaded and add is-transitioning
     body.classList.remove('is-loaded');
     body.classList.add('is-transitioning');
+
+    // Set internal navigation flag
+    sessionStorage.setItem('from_internal', 'true');
 
     setTimeout(() => {
       window.location.href = targetUrl;
