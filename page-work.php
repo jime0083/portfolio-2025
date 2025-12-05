@@ -9,10 +9,10 @@ get_header();
     <section class="top">
         <div class="top-container slide-down-bounce">
             <h1 class="top-title">Work</h1>
-            <p class="top-subtitle-1">ご用件が定まっていない状態からでもお気軽にお問い合わせください</p>
+            <p class="top-subtitle-1">フロントエンド開発・Webデザイン・Webサイト制作など幅広くお受けいたします</p>
             <p class="top-subtitle-2">
-                料金や納期などまずはお気軽にお問い合わせください<br>
-                フォームから送信いただきまたら翌営業日中に折り返しご連絡いたします。
+                貴社の目的に対してどのような方策がベストか<br>
+                要件が明確に定まってなくてもサポートいたします。
             </p>
         </div>
     </section>
@@ -25,7 +25,7 @@ get_header();
                 <!-- Item 1 -->
                 <div class="field-item">
                     <div class="field-image fade-in-left">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="フロントエンド開発">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work2.png" alt="フロントエンド開発">
                     </div>
                     <div class="field-main fade-in-right">
                         <div class="field-header">
@@ -44,7 +44,7 @@ get_header();
                 <div class="field-item reverse">
                     <div class="field-image fade-in-right">
                         <!-- Reusing Work1Pic.png as placeholder if specific image not provided, or use a gray box if preferred. Using Work1Pic for now as per instruction context -->
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="Webサイト制作">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work1.png" alt="Webサイト制作">
                     </div>
                     <div class="field-main fade-in-left">
                         <div class="field-header">
@@ -62,7 +62,7 @@ get_header();
                 <!-- Item 3 -->
                 <div class="field-item">
                     <div class="field-image fade-in-left">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Work1Pic.png" alt="Webデザイン">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work3.png" alt="Webデザイン">
                     </div>
                     <div class="field-main fade-in-right">
                         <div class="field-header">
@@ -95,11 +95,12 @@ get_header();
                         </div>
                         <div class="case-details">
                             <h3 class="case-title">toB向け設計アプリ デザイン・開発</h3>
-                            <p class="case-description">設計士の方に向けた図面作成・管理アプリケーションのデザインと開発を行いました。ユーザビリティを重視し、直感的な操作性を実現しています。</p>
+                            <p class="case-description">Adobe XDを使用し約10画面デザインカンプを作成、Vue.jsを使⽤してフロントエンド開発をしました。<br/>デザイナー・フロントエンドエンジニアが自分1人しかいなかったためこの案件内のデザイン・フロントエンド開発のすべてを担い、要件定義に加わり設計書の作成にも携わりました。</p>
                             <div class="case-tags">
                                 <span class="case-tag">Webアプリ</span>
                                 <span class="case-tag">フロントエンド</span>
-                                <span class="case-tag">UI/UX</span>
+                                <span class="case-tag">アプリデザイン</span>
+                                <span class="case-tag">要件定義</span>
                             </div>
                         </div>
                     </div>
@@ -111,15 +112,15 @@ get_header();
                     <div class="case-content">
                         <div class="case-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/spana1.png" alt="事例画像">
-                            <p class="case-category">EC・小売</p>
+                            <p class="case-category">情報通信</p>
                         </div>
                         <div class="case-details">
-                            <h3 class="case-title">コーポレートサイト デザイン・開発</h3>
-                            <p class="case-description">企業の魅力を最大限に伝えるコーポレートサイトを制作しました。WordPressをベースに、更新性と拡張性を両立させた設計を実現しています。</p>
+                            <h3 class="case-title">toC向けカーリスアプリ  デザイン・開発</h3>
+                            <p class="case-description">自動車関連企業のtoB向けアプリ(ウォーターフォール)のデザインとフロントエンド開発に携わりました。<br/>デザインではAdobe XDを使用し40ページ以上のデザインカンプを作成し、開発ではフロントエンドエンジニアとしてVue.jsを使⽤してSPA開発も行いました。</p>
                             <div class="case-tags">
-                                <span class="case-tag">WordPress</span>
-                                <span class="case-tag">Webデザイン</span>
-                                <span class="case-tag">コーディング</span>
+                                <span class="case-tag">Webアプリ</span>
+                                <span class="case-tag">フロントエンド</span>
+                                <span class="case-tag">アプリデザイン</span>
                             </div>
                         </div>
                     </div>
@@ -130,36 +131,17 @@ get_header();
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/spana1.png" alt="事例画像">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/helth.png" alt="事例画像">
                             <p class="case-category">ヘルスケア</p>
                         </div>
                         <div class="case-details">
-                            <h3 class="case-title">習慣化サポートアプリ 開発</h3>
-                            <p class="case-description">日々の習慣を記録・管理できるモバイルアプリを開発しました。Vue.jsを活用し、スムーズなユーザー体験を提供しています。</p>
+                            <h3 class="case-title">toC向けヘルスケアアプリ  デザイン・開発</h3>
+                            <p class="case-description">フロントエンド開発(Vue.js)加え要件定義から携わり設計書の作成も行いました。<br/>また、UI/UXに関する知見のあるのが自分しかいなかったため、Figmaを使用し約20画面デザインカンプを作成しました。</p>
                             <div class="case-tags">
-                                <span class="case-tag">モバイルアプリ</span>
-                                <span class="case-tag">Vue.js</span>
+                                <span class="case-tag">Webアプリ</span>
                                 <span class="case-tag">フロントエンド</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 4 -->
-                <div class="case-study fade-in-up">
-                    <div class="case-divider"></div>
-                    <div class="case-content">
-                        <div class="case-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/spana1.png" alt="事例画像">
-                            <p class="case-category">観光・地域</p>
-                        </div>
-                        <div class="case-details">
-                            <h3 class="case-title">地域情報アプリ デザイン・開発</h3>
-                            <p class="case-description">地域の魅力を発信する情報アプリを制作しました。ユーザーが使いやすいインターフェースと、充実した機能を備えています。</p>
-                            <div class="case-tags">
-                                <span class="case-tag">React</span>
-                                <span class="case-tag">UI/UX</span>
-                                <span class="case-tag">開発</span>
+                                <span class="case-tag">アプリデザイン</span>
+                                <span class="case-tag">要件定義</span>
                             </div>
                         </div>
                     </div>
@@ -171,15 +153,15 @@ get_header();
                     <div class="case-content">
                         <div class="case-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/spana1.png" alt="事例画像">
-                            <p class="case-category">教育</p>
+                            <p class="case-category">情報通信</p>
                         </div>
                         <div class="case-details">
-                            <h3 class="case-title">学習管理システム フロントエンド開発</h3>
-                            <p class="case-description">教育機関向けの学習管理システムのフロントエンド部分を担当しました。直感的な操作性と、豊富な機能を両立させています。</p>
+                            <h3 class="case-title">IT企業コーポレートサイトカスタマイズ  デザイン・開発</h3>
+                            <p class="case-description">IT企業のコーポレートサイトの刷新に携わりました。デザイン制作~コーディングまでを全て1人で対応しました。</p>
                             <div class="case-tags">
-                                <span class="case-tag">Webアプリ</span>
-                                <span class="case-tag">フロントエンド</span>
-                                <span class="case-tag">JavaScript</span>
+                                <span class="case-tag">Webデザイン</span>
+                                <span class="case-tag">Web制作</span>
+                                <span class="case-tag">WordPress</span>
                             </div>
                         </div>
                     </div>
@@ -190,16 +172,15 @@ get_header();
                     <div class="case-divider"></div>
                     <div class="case-content">
                         <div class="case-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/spana1.png" alt="事例画像">
-                            <p class="case-category">金融</p>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop.png" alt="事例画像">
+                            <p class="case-category">小売</p>
                         </div>
                         <div class="case-details">
-                            <h3 class="case-title">ファイナンシャルプランニングツール UI設計</h3>
-                            <p class="case-description">資産管理をサポートするツールのUI設計を担当しました。使いやすさと信頼性を重視したデザインを実現しています。</p>
+                            <h3 class="case-title">toC向けコーヒー豆販売LP  デザイン・開発</h3>
+                            <p class="case-description">LPデザイン制作~コーディングまでを全て1人で対応しました。</p>
                             <div class="case-tags">
-                                <span class="case-tag">UI設計</span>
-                                <span class="case-tag">Figma</span>
-                                <span class="case-tag">デザイン</span>
+                                <span class="case-tag">Webデザイン</span>
+                                <span class="case-tag">LP制作</span>
                             </div>
                         </div>
                     </div>
