@@ -115,3 +115,12 @@ document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^=
   });
 });
 
+// Force Video Loop
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  });
+}
+
