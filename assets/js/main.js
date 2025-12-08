@@ -84,8 +84,21 @@ window.addEventListener('load', () => {
 // Link Click
 document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
     const targetUrl = this.getAttribute('href');
+    const currentHost = window.location.hostname;
+    let targetHost = currentHost;
+
+    try {
+      targetHost = new URL(targetUrl, window.location.href).hostname;
+    } catch (error) {
+      // Invalid URL, treat as internal
+    }
+
+    if (targetHost !== currentHost) {
+      return; // External link, allow default behavior
+    }
+
+    e.preventDefault();
 
     // Remove loaded class to reset transform-origin if needed, 
     // but here we want to start from left.

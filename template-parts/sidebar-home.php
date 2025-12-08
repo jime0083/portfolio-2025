@@ -7,7 +7,7 @@
         </ul>
     </nav>
     <div class="sidebar-social">
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/x-red 1.png" alt="X"></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/github-red 1.png" alt="GitHub"></a>
+        <a href="https://x.com/Mikel_front_dev"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/x-red 1.png" alt="X"></a>
+        <a href="https://github.com/jime0083"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/github-red 1.png" alt="GitHub"></a>
     </div>
 </aside>

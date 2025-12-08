@@ -5,6 +5,10 @@
 
     <main id="primary" class="site-main">
         <section id="top" class="hero-section">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="<?php echo get_template_directory_uri(); ?>/assets/images/port.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 id="typewriter-text"></h1>
             </div>
@@ -19,44 +23,51 @@
                     </div>
                     
                     <!-- Item 1: Garden Office -->
-                    <article class="portfolio-item portfolio-item1 slide-down-bounce">
-                        <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port1.png" alt="造園系企業コーポレートサイト">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
-                            <div class="portfolio-overlay">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="overlay-icon">
-                                <span class="overlay-text">イベント<br><small>CLASS & EVENT</small></span>
+                     <a href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1">
+                        <article href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1" class="portfolio-item portfolio-item1 slide-down-bounce">
+                            <div class="portfolio-thumbnail">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port1.png" alt="造園系企業コーポレートサイト">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                                <div class="portfolio-overlay">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="overlay-icon">
+                                    <span class="overlay-text">イベント<br><small>CLASS & EVENT</small></span>
+                                </div>
+                                <span class="portfolio-tag">Webデザイン</span>
                             </div>
-                            <span class="portfolio-tag">Webデザイン</span>
-                        </div>
-                        <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
-                    </article>
+                            <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
+                        </article>
+                    </a>
 
                     <!-- Item 2: Jirabai -->
-                    <article class="portfolio-item portfolio-item2 slide-down-bounce">
-                        <div class="portfolio-thumbnail">
+                    <a href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=IGaP00j6xBHdmf7G-1">
+                        <article href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=IGaP00j6xBHdmf7G-1" class="portfolio-item portfolio-item2 slide-down-bounce">
+                            <div class="portfolio-thumbnail">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port2.png" alt="地図アプリ「ジラバイ」">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
-                            <span class="portfolio-tag">アプリデザイン・開発</span>
-                        </div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                                <span class="portfolio-tag">アプリデザイン・開発</span>
+                            </div>
                         <h3 class="portfolio-title">造園系企業コーポレートサイト</h3>
-                    </article>
+                        </article>
+                    </a>
                 </div>
 
                 <!-- Right Column: portfolio-section2 -->
                 <div class="portfolio-section2">
                     <!-- Item 3: Micro Habit Runner -->
-                    <article class="portfolio-item portfolio-item3 slide-down-bounce">
-                        <div class="portfolio-thumbnail">
+                    <a href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490">
+                        <article href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490" class="portfolio-item portfolio-item3 slide-down-bounce">
+                            <div class="portfolio-thumbnail">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port3.png" alt="ヘルスケアアプリ「Micro Habit Runner」">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
                             <span class="portfolio-tag">Webデザイン・開発</span>
-                        </div>
+                            </div>
                         <h3 class="portfolio-title">エンジニア・個人開発者向け名刺アプリ「ソクメイシ」</h3>
-                    </article>
+                        </article>
+                    </a>
 
                     <!-- Item 4: Dasaowa -->
-                    <article class="portfolio-item portfolio-item4 slide-down-bounce">
+                    <a href="https://nukebuy.web.app/">
+                    <article href="https://nukebuy.web.app/" class="portfolio-item portfolio-item4 slide-down-bounce">
                         <div class="portfolio-thumbnail">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port4.png" alt="ファッション系アプリ「ダサオワ」">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
@@ -64,6 +75,7 @@
                         </div>
                         <h3 class="portfolio-title">ヘルスケア系アプリ「ヌケバイ」</h3>
                     </article>
+                    </a>
                 </div>
             </div>
         </section>
