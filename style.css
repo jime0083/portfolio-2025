@@ -249,7 +249,7 @@ ul {
 }
 
 .hero-content h1 {
-    font-size: 128px;
+    font-size: 112px;
     color: #ff6b81;
     margin: 0;
     line-height: 1;
@@ -451,6 +451,15 @@ ul {
     .portfolio-thumbnail img {
         width: 360px;
     }
+
+    .portfolio-section2 {
+        align-items: flex-end;
+        flex: 0 0 360px;
+    }
+
+    .hero-content h1 {
+        font-size: 64px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -507,11 +516,15 @@ ul {
 
     .portfolio-section1 {
         width: 100%;
+        flex: initial;
+        /* PC用の固定幅を解除 */
         /* align-items: center; を削除して左揃えに */
     }
 
     .portfolio-section2 {
         width: 100%;
+        flex: initial;
+        /* PC用の固定幅を解除 */
         align-items: center;
         /* アイテムを中央寄せ */
     }
@@ -537,6 +550,10 @@ ul {
     }
 
     /* Profile Section */
+    .profile-section {
+        margin-top: 20px !important;
+    }
+
     .profile-section .portfolio-container {
         display: flex;
         flex-direction: column;
@@ -607,7 +624,7 @@ ul {
 
     .profile-image-responsive img {
         width: 100%;
-        max-width: 360px;
+        /* max-width: 360px; を削除して親要素に合わせる */
         height: 240px;
     }
 
@@ -633,6 +650,12 @@ ul {
        特有の調整が必要なければそのままで良いが、念のため残しておく */
     .section-header h2 {
         font-size: 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-content h1 {
+        font-size: 32px;
     }
 }
 
@@ -741,6 +764,7 @@ ul {
     flex-direction: column;
     gap: 24px;
     /* Vertical gap between rows if needed, though rows handle it */
+    margin: 0 auto;
 }
 
 .contact-row {
@@ -854,19 +878,19 @@ ul {
     }
 
     .contact-input {
-        width: 480px;
+        width: 450px;
     }
 
     .contact-textarea {
-        width: 480px;
+        width: 450px;
     }
 
     .contact-submit {
-        width: 480px !important;
+        width: 450px !important;
     }
 
     .contact-form {
-        width: 480px !important;
+        width: 450px !important;
     }
 
     .top-title {
@@ -1159,37 +1183,37 @@ ul {
     }
 
     .field-image {
-        width: 426px;
-        height: 240px;
+        width: 576px;
+        height: 324px;
     }
 
     .field-main {
-        width: 480px;
-        height: 160px;
+        width: 684px;
+        height: 216px;
         padding: 20px;
     }
 
     .field-title {
-        font-size: 18px;
+        /* font-size: 18px; */
         margin-top: 0;
     }
 
-    .skills-title {
+    /* .skills-title {
         font-size: 18px;
     }
 
     .field-description {
         font-size: 12px;
         margin-bottom: 12px;
-    }
+    } */
 
-    .skills-list {
+    /* .skills-list {
         font-size: 12px;
-    }
+    } */
 
-    .field-subtitle {
+    /* .field-subtitle {
         font-size: 8px;
-    }
+    } */
 
     .field-header {
         margin-bottom: 8px;
@@ -1242,6 +1266,28 @@ ul {
         background-color: #444;
         /* 不透明にするか、そのままか。そのままにする */
         padding: 24px;
+    }
+
+    .field-title {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .skills-title {
+        font-size: 18px;
+    }
+
+    .field-description {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .skills-list {
+        font-size: 12px;
+    }
+
+    .field-subtitle {
+        font-size: 8px;
     }
 
     .field-list {

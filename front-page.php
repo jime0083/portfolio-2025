@@ -89,7 +89,7 @@
                     </div>
                     <!-- Responsive Image: Visible only on small screens -->
                     <div class="profile-image-responsive">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rectangle 15.png" alt="Profile Image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port5.png" alt="Profile Image">
                     </div>
                     <div class="profile-text fade-in-left">
                         <h3 class="profile-name">栗田 孟 <span class="en-name">Hajime Kurita</span></h3>
