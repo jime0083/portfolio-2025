@@ -26,7 +26,7 @@
                      <a href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1">
                         <article href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1" class="portfolio-item portfolio-item1 slide-down-bounce">
                             <div class="portfolio-thumbnail">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port1.png" alt="造園系企業コーポレートサイト">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-1.png" alt="造園系企業コーポレートサイト">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
                                 <div class="portfolio-overlay">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="overlay-icon">
@@ -39,10 +39,10 @@
                     </a>
 
                     <!-- Item 2: Jirabai -->
-                    <a href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=IGaP00j6xBHdmf7G-1">
-                        <article href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=IGaP00j6xBHdmf7G-1" class="portfolio-item portfolio-item2 slide-down-bounce">
+                    <a href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1">
+                        <article href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1" class="portfolio-item portfolio-item2 slide-down-bounce">
                             <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port2.png" alt="地図アプリ「ジラバイ」">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-2.png" alt="地図アプリ「ジラバイ」">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
                                 <span class="portfolio-tag">アプリデザイン・開発</span>
                             </div>
@@ -57,7 +57,7 @@
                     <a href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490">
                         <article href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490" class="portfolio-item portfolio-item3 slide-down-bounce">
                             <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port3.png" alt="ヘルスケアアプリ「Micro Habit Runner」">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-3.png" alt="ヘルスケアアプリ「Micro Habit Runner」">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
                             <span class="portfolio-tag">Webデザイン・開発</span>
                             </div>
