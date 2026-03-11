@@ -36,7 +36,7 @@
         <nav id="site-navigation" class="main-navigation">
             <ul>
                 <li><a href="<?php echo esc_url(home_url('/work')); ?>">Work</a></li>
-                <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
+                <li><a href="<?php echo esc_url(home_url('/app')); ?>">App</a></li>
             </ul>
         </nav>
 
@@ -54,7 +54,7 @@
         <div class="mobile-menu-content">
             <ul>
                 <li><a href="<?php echo esc_url(home_url('/work')); ?>">Work</a></li>
-                <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
+                <li><a href="<?php echo esc_url(home_url('/app')); ?>">App</a></li>
             </ul>
             <div class="mobile-sns-links">
                 <a href="#" target="_blank" rel="noopener noreferrer">

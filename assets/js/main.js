@@ -65,6 +65,44 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // App Modal Logic
+  const appModal = document.getElementById('app-modal');
+  const appItems = document.querySelectorAll('.app-item');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  if (appModal && appItems.length > 0) {
+    appItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.querySelector('.app-title').textContent;
+        const fullDesc = item.getAttribute('data-full-desc');
+        const url = item.getAttribute('data-url');
+
+        appModal.querySelector('.modal-title').textContent = title;
+        appModal.querySelector('.modal-description').textContent = fullDesc;
+        appModal.querySelector('.modal-link').href = url;
+
+        appModal.classList.add('is-active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+    });
+
+    const closeModal = () => {
+      appModal.classList.remove('is-active');
+      document.body.style.overflow = '';
+    };
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && appModal.classList.contains('is-active')) {
+        closeModal();
+      }
+    });
+  }
 });
 
 // Page Transition
@@ -123,4 +161,3 @@ if (heroVideo) {
     this.play();
   });
 }
-
