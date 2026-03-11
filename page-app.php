@@ -22,7 +22,6 @@ get_header();
         <div class="app-container">
             <div class="app-grid">
                 <?php
-                // Dummy app data for initial implementation
                 $apps = [
                     [
                         'id' => 'skill-sheet',
@@ -35,7 +34,7 @@ get_header();
                     [
                         'id' => 'metronome',
                         'title' => 'Metronome-Mega-Max',
-                        'desc' => '楽器練習用の多機能メトロノーム。タイマー・録音機能もついたひとつのアプリで完結',
+                        'desc' => '音楽練習に必要なメトロノーム・タイマー・音楽再生機能がひとつのアプリで完結！',
                         'skills' => 'Javascript(ReactNative) | HTML / CSS, Git, Firebase',
                         'full_desc' => '楽器演奏者のための究極のメトロノームアプリです。精度の高いクリックに加え、練習時間を管理するタイマー機能、自分の演奏をすぐに確認できる録音機能を搭載しています。',
                         'url' => '#'
@@ -59,7 +58,7 @@ get_header();
                     [
                         'id' => 'batsugaku',
                         'title' => 'Batsugaku',
-                        'desc' => 'フォロワー「1人より1000」を目指すエンジニアに向けた爆速でフォローを増やすための分析アプリ',
+                        'desc' => 'フォロワーが「サボり」を監視！エンジニア向け絶対に学習をサボらせない学習習慣化アプリ',
                         'skills' => 'Javascript(ReactNative) | HTML / CSS, Git, Firebase',
                         'full_desc' => 'SNSでの技術的な発信を最大化するための分析ツールです。どのような投稿がリーチを伸ばすのか、最適な投稿タイミングはいつなのかをデータに基づいて提案します。',
                         'url' => '#'
@@ -67,9 +66,57 @@ get_header();
                     [
                         'id' => 'kapusai',
                         'title' => 'カプサイ',
-                        'desc' => 'ふとした時のアイデアをおさめておけるようなシンプルなUIの録音アプリ',
+                        'desc' => 'ふたりのお金を見える化して“欲しい”を叶えるカップル向け家計簿アプリ',
                         'skills' => 'Javascript(ReactNative) | HTML / CSS, Git, Firebase',
                         'full_desc' => 'ひらめきを逃さないためのミニマルな録音アプリです。あえて機能を削ぎ落とし、起動してすぐに録音することに特化したデザインになっています。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'zokumeishi',
+                        'title' => 'ゾクメイシ',
+                        'desc' => '30秒で作成可能！フリーランスエンジニア・デザイナー向け名刺作成アプリ',
+                        'skills' => 'Javascript(ReactNative) | HTML / CSS, Git, Firebase',
+                        'full_desc' => '30秒でプロ仕様の名刺が作成できるアプリ。エンジニアやデザイナーに最適なテンプレートが豊富です。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'shuchu-chu',
+                        'title' => '集中チュー',
+                        'desc' => 'スマホ一台では集中できない人向け！フロー導入をリードするアプリ',
+                        'skills' => 'Javascript(ReactNative) | HTML / CSS, Git, Firebase',
+                        'full_desc' => 'ポモドーロテクニックと環境音を組み合わせ、深い集中状態（フロー）への導入をサポートします。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'nukebai',
+                        'title' => 'ヌケバイ',
+                        'desc' => '次はいつ？テストの日程を身で管理し忘れ防止の参考にする',
+                        'skills' => 'Javascript(Vue.js), HTML, CSS, Git, Firebase',
+                        'full_desc' => '複雑なスケジュール管理をシンプルに。リマインダー機能で重要なイベントを見逃しません。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'frontend-1',
+                        'title' => 'フロントエンド開発',
+                        'desc' => '主にReactを使用しVue.js等のサービス開発をしています',
+                        'skills' => 'Javascript(React/Vue.js), HTML, CSS, Git',
+                        'full_desc' => 'モダンなフロントエンドフレームワークを用いた開発実績をまとめたプロジェクトです。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'frontend-2',
+                        'title' => 'フロントエンド開発',
+                        'desc' => '主にReactを使用したSNSサービスの開発をしています',
+                        'skills' => 'Javascript(React/Next.js), HTML, CSS, Git',
+                        'full_desc' => 'React/Next.jsを用いた大規模なSNSサービスのUI/UX実装に携わりました。',
+                        'url' => '#'
+                    ],
+                    [
+                        'id' => 'frontend-3',
+                        'title' => 'フロントエンド開発',
+                        'desc' => '主にVue.jsを用いたCMS開発および開発運用をしています',
+                        'skills' => 'Javascript(Vue.js/Nuxt.js), HTML, CSS, Git',
+                        'full_desc' => 'Vue.jsを用いた管理画面の開発一式および効率的な運用の仕組みづくりを行っています。',
                         'url' => '#'
                     ],
                 ];
