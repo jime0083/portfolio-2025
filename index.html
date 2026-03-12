@@ -607,7 +607,12 @@
                     <div class="contact-row full-width">
                         <div class="contact-item contact-item-full">
                             <label class="contact-label" for="inquiry-type">お問い合わせ内容</label>
-                            <input type="text" id="inquiry-type" name="inquiry-type" class="contact-input contact-input-half" required>
+                            <select id="inquiry-type" name="inquiry-type" class="contact-select" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="開発に関するお問い合わせ">開発に関するお問い合わせ</option>
+                                <option value="パートナーに関するお問い合わせ">パートナーに関するお問い合わせ</option>
+                                <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+                            </select>
                         </div>
                     </div>
 
