@@ -302,18 +302,17 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // Google Forms URL - ユーザーが設定する必要があります
-      // 例: https://docs.google.com/forms/d/e/xxxxx/formResponse
-      const GOOGLE_FORMS_URL = '';
+      // Google Forms URL
+      const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSekq3ma4q3JZtrkn4MLviqrc-4VGcF1YQm2qTC3qMOkgR_t4w/formResponse';
 
-      // Google Forms entry IDs - ユーザーが設定する必要があります
+      // Google Forms entry IDs
       const ENTRY_IDS = {
-        inquiryType: '', // entry.xxxxx
-        name: '',        // entry.xxxxx
-        furigana: '',    // entry.xxxxx
-        company: '',     // entry.xxxxx
-        email: '',       // entry.xxxxx
-        message: ''      // entry.xxxxx
+        inquiryType: 'entry.89016268',
+        name: 'entry.1959993333',
+        furigana: 'entry.798376429',
+        company: 'entry.521816702',
+        email: 'entry.1724482242',
+        message: 'entry.1961659720'
       };
 
       // フォームデータを取得
