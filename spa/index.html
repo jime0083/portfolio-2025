@@ -37,7 +37,7 @@
         <nav id="site-navigation" class="main-navigation">
             <ul>
                 <li><a href="#work" data-nav>Work</a></li>
-                <li><a href="#app" data-nav>App</a></li>
+                <li><a href="#contact" data-nav>Contact</a></li>
             </ul>
         </nav>
 
@@ -55,7 +55,7 @@
         <div class="mobile-menu-content">
             <ul>
                 <li><a href="#work" data-nav>Work</a></li>
-                <li><a href="#app" data-nav>App</a></li>
+                <li><a href="#contact" data-nav>Contact</a></li>
             </ul>
             <div class="mobile-sns-links">
                 <a href="https://x.com/Mikel_front_dev" target="_blank" rel="noopener noreferrer">
@@ -583,6 +583,78 @@
                 </div>
             </div>
         </div>
+    </main>
+</div>
+
+<!-- ========== CONTACT PAGE ========== -->
+<div id="page-contact" class="page-section" data-page="contact">
+    <main id="primary-contact" class="site-main">
+        <section class="top contact-top">
+            <div class="top-container slide-down-bounce">
+                <h1 class="top-title">Contact</h1>
+                <p class="top-subtitle-1">ご用件が定まっていない状態からでも<br class="sp-only">お気軽にお問い合わせください</p>
+                <p class="top-subtitle-2">
+                    料金や納期などのご相談はフォームから送信いただきましたら<br>
+                    翌営業日中に折り返しご連絡いたします。
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form" action="#" method="POST">
+                    <!-- お問い合わせ内容 -->
+                    <div class="contact-row full-width">
+                        <div class="contact-item contact-item-full">
+                            <label class="contact-label" for="inquiry-type">お問い合わせ内容</label>
+                            <input type="text" id="inquiry-type" name="inquiry-type" class="contact-input contact-input-half" required>
+                        </div>
+                    </div>
+
+                    <!-- 氏名 / フリガナ -->
+                    <div class="contact-row">
+                        <div class="contact-item">
+                            <label class="contact-label" for="name">氏名</label>
+                            <input type="text" id="name" name="name" class="contact-input" required>
+                        </div>
+                        <div class="contact-item">
+                            <label class="contact-label" for="furigana">フリガナ</label>
+                            <input type="text" id="furigana" name="furigana" class="contact-input" required>
+                        </div>
+                    </div>
+
+                    <!-- 会社名 / メールアドレス -->
+                    <div class="contact-row">
+                        <div class="contact-item">
+                            <label class="contact-label" for="company">会社名</label>
+                            <input type="text" id="company" name="company" class="contact-input">
+                        </div>
+                        <div class="contact-item">
+                            <label class="contact-label" for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="contact-input" required>
+                        </div>
+                    </div>
+
+                    <!-- お問い合わせ内容詳細容 -->
+                    <div class="contact-row full-width">
+                        <div class="contact-item contact-item-full">
+                            <label class="contact-label" for="message">お問い合わせ内容詳細容</label>
+                            <textarea id="message" name="message" class="contact-textarea" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="contact-row full-width">
+                        <button type="submit" class="contact-submit">SEND</button>
+                    </div>
+                </form>
+
+                <!-- 送信完了メッセージ -->
+                <div id="contact-success" class="contact-success" style="display: none;">
+                    <p>お問い合わせありがとうございます。<br>内容を確認次第、ご連絡いたします。</p>
+                </div>
+            </div>
+        </section>
     </main>
 </div>
 
