@@ -31,7 +31,7 @@ const SpaRouter = {
       return;
     }
 
-    if (hash === 'home' || hash === 'work' || hash === 'app') {
+    if (hash === 'home' || hash === 'work' || hash === 'app' || hash === 'contact') {
       this.showPage(hash);
     }
   },
@@ -288,4 +288,103 @@ document.addEventListener('DOMContentLoaded', function () {
   targets.forEach(target => {
     observer.observe(target);
   });
+});
+
+/**
+ * Contact Form Submission
+ * Google Formsへの送信を処理
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Google Forms URL - ユーザーが設定する必要があります
+      // 例: https://docs.google.com/forms/d/e/xxxxx/formResponse
+      const GOOGLE_FORMS_URL = '';
+
+      // Google Forms entry IDs - ユーザーが設定する必要があります
+      const ENTRY_IDS = {
+        inquiryType: '', // entry.xxxxx
+        name: '',        // entry.xxxxx
+        furigana: '',    // entry.xxxxx
+        company: '',     // entry.xxxxx
+        email: '',       // entry.xxxxx
+        message: ''      // entry.xxxxx
+      };
+
+      // フォームデータを取得
+      const formData = {
+        inquiryType: document.getElementById('inquiry-type').value,
+        name: document.getElementById('name').value,
+        furigana: document.getElementById('furigana').value,
+        company: document.getElementById('company').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      };
+
+      // Google FormsのURLが設定されていない場合はmailtoにフォールバック
+      if (!GOOGLE_FORMS_URL) {
+        const mailtoBody = `
+お問い合わせ内容: ${formData.inquiryType}
+氏名: ${formData.name}
+フリガナ: ${formData.furigana}
+会社名: ${formData.company}
+メールアドレス: ${formData.email}
+
+お問い合わせ内容詳細:
+${formData.message}
+        `.trim();
+
+        const mailtoLink = `mailto:kuritahajime.business@gmail.com?subject=${encodeURIComponent('ポートフォリオサイトからのお問い合わせ')}&body=${encodeURIComponent(mailtoBody)}`;
+
+        window.location.href = mailtoLink;
+        return;
+      }
+
+      // Google Formsに送信
+      const googleFormData = new FormData();
+      googleFormData.append(ENTRY_IDS.inquiryType, formData.inquiryType);
+      googleFormData.append(ENTRY_IDS.name, formData.name);
+      googleFormData.append(ENTRY_IDS.furigana, formData.furigana);
+      googleFormData.append(ENTRY_IDS.company, formData.company);
+      googleFormData.append(ENTRY_IDS.email, formData.email);
+      googleFormData.append(ENTRY_IDS.message, formData.message);
+
+      // iframe経由で送信（CORSを回避）
+      const iframe = document.createElement('iframe');
+      iframe.name = 'hidden_iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = GOOGLE_FORMS_URL;
+      form.target = 'hidden_iframe';
+
+      for (const [key, value] of googleFormData.entries()) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+
+      // 送信完了を表示
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+
+      // クリーンアップ
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+        document.body.removeChild(form);
+      }, 1000);
+    });
+  }
 });
