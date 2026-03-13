@@ -186,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const appModal = document.getElementById('app-modal');
   const appItems = document.querySelectorAll('.app-item');
-  const modalClose = document.querySelector('.modal-close');
   const modalOverlay = document.querySelector('.modal-overlay');
 
   if (appModal && appItems.length > 0) {
@@ -195,10 +194,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const title = item.querySelector('.app-title').textContent;
         const fullDesc = item.getAttribute('data-full-desc');
         const url = item.getAttribute('data-url');
+        const skills = item.getAttribute('data-skills');
 
         appModal.querySelector('.modal-title').textContent = title;
         appModal.querySelector('.modal-description').textContent = fullDesc;
         appModal.querySelector('.modal-link').href = url;
+        appModal.querySelector('.modal-skills-list').textContent = skills;
 
         appModal.classList.add('is-active');
         document.body.style.overflow = 'hidden';
@@ -210,12 +211,70 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = '';
     };
 
-    if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && appModal.classList.contains('is-active')) {
         closeModal();
+      }
+    });
+  }
+
+  // Portfolio Modal Logic
+  const portfolioModal = document.getElementById('portfolio-modal');
+  const portfolioItems = document.querySelectorAll('.portfolio-modal-trigger');
+  const portfolioModalOverlay = portfolioModal ? portfolioModal.querySelector('.modal-overlay') : null;
+
+  if (portfolioModal && portfolioItems.length > 0) {
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const title = item.getAttribute('data-title');
+        const desc = item.getAttribute('data-desc');
+        const note = item.getAttribute('data-note');
+        const skills = item.getAttribute('data-skills');
+        const siteUrl = item.getAttribute('data-site-url');
+        const designUrl = item.getAttribute('data-design-url');
+
+        portfolioModal.querySelector('.modal-title').textContent = title;
+        portfolioModal.querySelector('.modal-description').textContent = desc;
+        portfolioModal.querySelector('.modal-note').textContent = note;
+        portfolioModal.querySelector('.modal-skills-list').textContent = skills;
+
+        const siteLink = portfolioModal.querySelector('.modal-site-link');
+        const designLink = portfolioModal.querySelector('.modal-design-link');
+
+        if (siteUrl) {
+          siteLink.href = siteUrl;
+          siteLink.classList.remove('is-hidden');
+        } else {
+          siteLink.classList.add('is-hidden');
+        }
+
+        if (designUrl) {
+          designLink.href = designUrl;
+          designLink.classList.remove('is-hidden');
+        } else {
+          designLink.classList.add('is-hidden');
+        }
+
+        portfolioModal.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closePortfolioModal = () => {
+      portfolioModal.classList.remove('is-active');
+      document.body.style.overflow = '';
+    };
+
+    if (portfolioModalOverlay) portfolioModalOverlay.addEventListener('click', closePortfolioModal);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && portfolioModal.classList.contains('is-active')) {
+        closePortfolioModal();
       }
     });
   }

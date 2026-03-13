@@ -1,0 +1,2208 @@
+/*
+Theme Name: Portfolio 2025
+Author: Antigravity
+Description: Custom theme for Portfolio 2025 based on Figma designs.
+Version: 1.0
+*/
+
+/* Reset & Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 游明朝, YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", HG明朝E, "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    background-color: #333;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    /* コンテナで制御するため0に */
+    box-sizing: border-box;
+    /* 上部が#000000のopacity0.3で下部が#000000のopacity0のグラデーション */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0 36px;
+    /* 左右36pxの空白 */
+    margin: 0;
+    /* 中央寄せ解除 */
+    box-sizing: border-box;
+}
+
+.site-title {
+    margin: 0;
+}
+
+.site-title a {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-navigation a {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.header-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+.mobile-navigation {
+    display: none;
+    position: fixed;
+    top: 0;
+    /* 全画面にするため0に */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* 全画面 */
+    background-color: #343434;
+    padding: 0;
+    z-index: 2000;
+    /* ヘッダーより上に */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-navigation.is-open {
+    display: flex;
+    /* flexに変更して中央寄せ */
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.mobile-navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.mobile-navigation a {
+    color: #D1597B;
+    font-weight: bold;
+    font-size: 24px;
+    /* 文字サイズ大きく */
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.mobile-sns-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mobile-sns-links img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Sidebar (Home Only) */
+.home-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 120px 0 40px;
+    box-sizing: border-box;
+    align-items: center;
+    z-index: 900;
+    /* Gradient background from left (black opacity 0.3) to right (black opacity 0) */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+
+.sidebar-navigation ul {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.sidebar-navigation a {
+    color: #ff6b81;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+.sidebar-social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.sidebar-social img {
+    width: 20px;
+    height: auto;
+    display: block;
+}
+
+/* Main Content */
+.site-main {
+    margin-left: 100px;
+    /* Space for sidebar */
+    padding-top: 0;
+}
+
+.hero-section {
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: -100px;
+    /* サイドバーの幅分を相殺 */
+    width: 100vw;
+    /* 画面全体の幅 */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(52, 52, 52, 0.3), rgba(52, 52, 52, 0.8));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 112px;
+    color: #ff6b81;
+    margin: 0;
+    line-height: 1;
+    /* Overlay text style */
+}
+
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #333;
+    width: 100%;
+}
+
+.portfolio-container {
+    max-width: 1360px;
+    padding: 0 136px 0 36px;
+    /* 左36px、右136px */
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    gap: 60px;
+}
+
+/* Left Column */
+.portfolio-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-header h2 {
+    font-size: 64px;
+    color: #ff6b81;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.section-header p {
+    color: #ff6b81;
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.portfolio-section1 .portfolio-item1 {
+    margin-bottom: 160px;
+}
+
+/* Right Column */
+.portfolio-section2 {
+    flex: 0 0 480px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+    /* 上部に51pxの空白 */
+}
+
+.portfolio-section2 .portfolio-item3 {
+    margin-bottom: 160px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    /* 画像の幅に合わせて固定 */
+}
+
+.portfolio-thumbnail {
+    position: relative;
+    width: 480px;
+    aspect-ratio: 480 / 365;
+    /* アスペクト比を固定してサイズを統一 */
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    /* デフォルトは透明 */
+    transition: border 0.3s ease;
+}
+
+.portfolio-thumbnail img {
+    width: 480px;
+    height: 100%;
+    /* 高さをコンテナに合わせる */
+    object-fit: cover;
+    /* アスペクト比を維持してトリミング */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-thumbnail {
+    border: 3px solid #D1597B;
+    /* ホバー時にピンクの枠線 */
+}
+
+.portfolio-item:hover .portfolio-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* ホバー時のオーバーレイ */
+.portfolio-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.portfolio-item:hover .portfolio-thumbnail::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* ホバー時に黒のオーバーレイ */
+}
+
+/* リンクアイコン */
+.portfolio-link-icon {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+}
+
+.portfolio-item:hover .portfolio-link-icon {
+    opacity: 1;
+}
+
+.portfolio-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6b81;
+    /* Pink background */
+    color: #333;
+    font-size: 13px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+.portfolio-title {
+    font-size: 18px;
+    color: #ff6b81;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ff6b81;
+    font-weight: normal;
+}
+
+/* Overlay for the first item (example) */
+.portfolio-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    /* Hidden by default, or specific to design */
+}
+
+/* Responsive Image for Profile (Hidden by default) */
+.profile-image-responsive {
+    display: none;
+    margin-bottom: 24px;
+    text-align: right;
+    /* 右寄せ */
+}
+
+.profile-image-responsive img {
+    width: 480px;
+    height: 360px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .portfolio-item {
+        width: 360px;
+    }
+
+    .portfolio-thumbnail {
+        width: 360px;
+        aspect-ratio: 360 / 240;
+    }
+
+    .portfolio-thumbnail img {
+        width: 360px;
+    }
+
+    .portfolio-section2 {
+        align-items: flex-end;
+        flex: 0 0 360px;
+    }
+
+    .hero-content h1 {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .portfolio-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 960px) {
+
+    /* Sidebar & Layout */
+    .home-sidebar {
+        display: none;
+    }
+
+    .site-main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .header-container {
+        padding-left: 0;
+    }
+
+    /* Header Responsive (Padding adjustment only for 960px) */
+    .header-container {
+        padding: 0 24px;
+    }
+
+    /* .main-navigation, .header-menu-icon styles moved to 500px media query */
+
+    /* Hero Section Full Width */
+    .hero-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        max-width: 100vw;
+        border-radius: 0;
+        /* 角丸解除 */
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        /* 中央寄せ */
+        width: 480px;
+        /* 幅を480pxに固定 */
+        padding: 0;
+        /* パディング解除 */
+        margin: 0 auto;
+    }
+
+    .portfolio-section1 {
+        width: 100%;
+        flex: initial;
+        /* PC用の固定幅を解除 */
+        /* align-items: center; を削除して左揃えに */
+    }
+
+    .portfolio-section2 {
+        width: 100%;
+        flex: initial;
+        /* PC用の固定幅を解除 */
+        align-items: center;
+        /* アイテムを中央寄せ */
+    }
+
+    .portfolio-section2 {
+        padding-top: 0;
+    }
+
+    .portfolio-item {
+        width: 480px;
+        /* 幅を480pxに変更 */
+        margin-bottom: 16px !important;
+    }
+
+    .portfolio-thumbnail {
+        width: 480px;
+        aspect-ratio: 480 / 360;
+        /* アスペクト比変更 */
+    }
+
+    .portfolio-thumbnail img {
+        width: 480px;
+    }
+
+    /* Profile Section */
+    .profile-section {
+        margin-top: 20px !important;
+    }
+
+    .profile-section .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 480px;
+        /* 幅を480pxに固定 */
+    }
+
+    .profile-text-column {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-image-column {
+        display: none;
+    }
+
+    .profile-image-responsive {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+
+    /* Hero Section Full Width Fix */
+    .hero-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        max-width: 100vw;
+    }
+
+    .hero-content h1 {
+        display: none;
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+        width: 100%;
+        /* 幅を100%に */
+        max-width: 360px;
+        /* 最大幅を360pxに制限 */
+        margin: 0 auto;
+        /* 中央寄せ */
+    }
+
+    .portfolio-item {
+        width: 100%;
+        /* 親要素に合わせる */
+        max-width: 360px;
+    }
+
+    .portfolio-thumbnail {
+        width: 100%;
+        aspect-ratio: 360 / 240;
+    }
+
+    .portfolio-thumbnail img {
+        width: 100%;
+    }
+
+    /* Profile Section */
+    .profile-section .portfolio-container {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .profile-image-responsive img {
+        width: 100%;
+        /* max-width: 360px; を削除して親要素に合わせる */
+        height: 240px;
+    }
+
+    /* Header Responsive (Mobile Menu) */
+    .main-navigation {
+        display: none;
+    }
+
+    .header-menu-icon {
+        display: block;
+    }
+
+    .header-menu-icon img {
+        width: 24px;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 既存の768px以下のスタイルは960px以下に含まれるか、500px以下で上書きされるため、
+       特有の調整が必要なければそのままで良いが、念のため残しておく */
+    .section-header h2 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+/* Profile Section */
+/* Profile Section */
+.profile-section {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+.profile-text-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-text-column .section-header {
+    margin-bottom: 24px;
+    height: auto;
+    /* Portfolioセクションの設定をリセット */
+    transform: none;
+    /* Portfolioセクションの設定をリセット */
+}
+
+.profile-image-column {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    /* 画像が表示される高さを確保 */
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-top: 0 !important;
+}
+
+.en-name {
+    font-size: 16px;
+    font-weight: normal;
+    color: #ccc;
+}
+
+.profile-text p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.profile-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img-1 {
+    position: absolute;
+    width: 280px;
+    height: 420px;
+    object-fit: cover;
+    top: 10px;
+    /* 上部に50pxの空白 */
+    left: 0;
+    /* 左端 */
+    z-index: 1;
+}
+
+.profile-img-2 {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    object-fit: cover;
+    bottom: -50px;
+    /* 下部 */
+    right: 0;
+    /* 右端 */
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image-placeholder {
+        min-height: 300px;
+    }
+}
+
+/* Contact Page definitions moved to Common Section */
+
+/* Contact Form */
+.contact-main {
+    margin-top: 48px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Vertical gap between rows if needed, though rows handle it */
+    margin: 0 auto;
+}
+
+.contact-row {
+    display: flex;
+    gap: 80px;
+}
+
+.contact-row.full-width {
+    gap: 0;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-title {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 0;
+    /* 0px gap to input */
+    line-height: 1.5;
+}
+
+.contact-input {
+    width: 480px;
+    height: 48px;
+    background-color: #fff;
+    border: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-textarea {
+    width: 1040px;
+    height: 160px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact-submit {
+    width: 1040px;
+    height: 48px;
+    background-color: #D1597B;
+    border-radius: 100px;
+    /* Default bg */
+    color: #333;
+    /* Default text color */
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-submit:hover {
+    background-color: #343434;
+    border: 2px solid #D1597B;
+    color: #D1597B;
+}
+
+@media (max-width: 1200px) {
+
+    /* 1200px以下: 横並び維持、サイズ縮小 */
+    .top-container,
+    .contact-container {
+        max-width: 808px !important;
+        /* Workに合わせて808pxに変更 */
+    }
+
+    .contact-row {
+        gap: 40px;
+        /* 80px -> 40px */
+    }
+
+    .contact-input {
+        width: 360px;
+    }
+
+    .contact-textarea {
+        width: 760px;
+        /* 360*2 + 40 */
+    }
+
+    .contact-submit {
+        width: 760px !important;
+    }
+
+    .contact-form {
+        width: 760px !important;
+    }
+}
+
+@media (max-width: 960px) {
+
+    /* 960px以下: 1列配置 */
+    .top-container,
+    .contact-container {
+        max-width: 528px !important;
+        /* Workに合わせて528pxに変更 */
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-input {
+        width: 450px;
+    }
+
+    .contact-textarea {
+        width: 450px;
+    }
+
+    .contact-submit {
+        width: 450px !important;
+    }
+
+    .contact-form {
+        width: 450px !important;
+    }
+
+    .top-title {
+        font-size: 64px !important;
+    }
+
+    .top-subtitle-1 {
+        font-size: 16px !important;
+    }
+
+    .top-subtitle-2 {
+        display: none;
+    }
+
+    /* contact-top height definition moved to common responsive section */
+}
+
+@media (max-width: 500px) {
+
+    /* 500px以下: 幅340px (左右マージン80px確保のため 500-160=340) */
+    .top-container,
+    .contact-container {
+        max-width: 340px !important;
+        width: 100%;
+        padding: 0 !important;
+        /* Workに合わせて!important追加 */
+        margin: 0 auto;
+        /* 中央寄せ */
+    }
+
+    .contact-form {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .contact-input,
+    .contact-textarea,
+    .contact-submit {
+        width: 100% !important;
+    }
+}
+
+
+
+/* Work Ex Section (Past Case Studies) */
+.work-ex {
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+.ex-section-title {
+    font-size: 24px;
+    color: #D1597B;
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+.case-study-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-study {
+    margin-bottom: 0;
+}
+
+.case-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.case-content {
+    display: flex;
+    flex-direction: column;
+    /* 縦並び */
+    gap: 8px;
+    /* 画像とカテゴリの間 */
+    margin-bottom: 24px;
+    /* 下線との間 */
+}
+
+.case-image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    /* 画像とカテゴリを中央揃え */
+    gap: 8px;
+    /* 画像とカテゴリの間隔 */
+}
+
+.case-image img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+.case-details {
+    flex: 1;
+}
+
+.case-category {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    /* マージン削除 */
+}
+
+.case-title {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 8px 0;
+    /* 8pxに変更 */
+    font-weight: bold;
+}
+
+.case-description {
+    font-size: 16px;
+    color: #fff;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.case-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.case-tag {
+    font-size: 8px;
+    font-weight: bold;
+    color: #D1597B;
+    background-color: rgba(68, 68, 68, 0.8);
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .case-content {
+        flex-direction: column;
+    }
+
+    .case-image {
+        width: 100%;
+    }
+}
+
+/* Work Page */
+/* Work Top definitions moved to Common Section */
+
+/* Work Field Section */
+.work-field {
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+.field-section-title {
+    font-size: 24px;
+    color: #D1597B;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.field-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* 重ね合わせのため */
+}
+
+.field-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.field-image {
+    width: 640px;
+    /* 画像幅固定 */
+    height: 360px;
+    /* 画像高さ固定 */
+    flex-shrink: 0;
+    /* 縮小しない */
+}
+
+.field-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 比率を維持してトリミング */
+    display: block;
+}
+
+.field-main {
+    width: 760px;
+    /* 幅固定 */
+    height: 240px;
+    /* 高さ固定 */
+    background-color: rgba(68, 68, 68, 0.8);
+    padding: 40px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    /* コンテンツ配置のため */
+    flex-direction: column;
+    justify-content: center;
+    /* 垂直中央 */
+    border-radius: 10px;
+}
+
+.field-item.reverse .field-main {
+    right: auto;
+    left: 0;
+    /* 左側に配置 */
+}
+
+.field-header {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.field-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #fff;
+    line-height: 1;
+}
+
+.field-subtitle {
+    font-size: 14px;
+    color: #D1597B;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+    padding-bottom: 2px;
+    /* 微調整 */
+}
+
+.field-description {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.field-skills {
+    border-top: none;
+    padding-top: 0;
+}
+
+.skills-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.skills-list {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Work & App Page Layout Fix */
+.page-template-page-work .site-main,
+.page-template-page-app .site-main {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Work Page Responsive */
+@media (max-width: 1200px) {
+
+    .top-container,
+    .work-container,
+    .app-container {
+        max-width: 808px;
+    }
+
+    .field-image {
+        width: 576px;
+        height: 324px;
+    }
+
+    .field-main {
+        width: 684px;
+        height: 216px;
+        padding: 20px;
+    }
+
+    .field-title {
+        /* font-size: 18px; */
+        margin-top: 0;
+    }
+
+    /* .skills-title {
+        font-size: 18px;
+    }
+
+    .field-description {
+        font-size: 12px;
+        margin-bottom: 12px;
+    } */
+
+    /* .skills-list {
+        font-size: 12px;
+    } */
+
+    /* .field-subtitle {
+        font-size: 8px;
+    } */
+
+    .field-header {
+        margin-bottom: 8px;
+    }
+
+    .skills-list {
+        margin: 0;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .top-container,
+    .work-container,
+    .app-container {
+        max-width: 528px;
+    }
+
+    .top-title {
+        font-size: 64px !important;
+    }
+
+    .top-subtitle-1 {
+        font-size: 16px !important;
+    }
+
+    .top-subtitle-2 {
+        display: none;
+    }
+
+    .top {
+        height: 240px !important;
+    }
+
+    /* Field Section Responsive */
+    .field-item,
+    .field-item.reverse {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .field-image {
+        width: 100%;
+        margin-bottom: 16px;
+        /* 16pxの空白 */
+    }
+
+    .field-main {
+        position: static;
+        width: 100%;
+        background-color: #444;
+        /* 不透明にするか、そのままか。そのままにする */
+        padding: 24px;
+    }
+
+    .field-title {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .skills-title {
+        font-size: 18px;
+    }
+
+    .field-description {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .skills-list {
+        font-size: 12px;
+    }
+
+    .field-subtitle {
+        font-size: 8px;
+    }
+
+    .field-list {
+        gap: 40px;
+        /* 80px -> 40px */
+    }
+
+    .work-ex {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .top-container,
+    .work-container,
+    .app-container {
+        max-width: 340px !important;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 auto;
+    }
+}
+
+/* Old Work Title definitions removed */
+
+/* Common Top Section for Work & Contact */
+.top {
+    width: 100%;
+    height: 700px;
+    background-image: url('/assets/images/ContactTopImg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.top-container,
+.work-container,
+.contact-container {
+    width: 100%;
+    max-width: 1088px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.top-title {
+    font-size: 200px;
+    font-weight: bold;
+    color: #D1597B;
+    margin: 0;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+.top-subtitle-1 {
+    font-size: 24px;
+    color: #D1597B;
+    font-weight: bold;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.top-subtitle-2 {
+    font-size: 16px;
+    color: #D1597B;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+/* Contact & App Page Layout Fix */
+.page-template-page-contact .site-main,
+.page-template-page-app .site-main {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Animations */
+/* Typewriter Cursor */
+#typewriter-text::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+    color: #ff6b81;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Slide Down & Bounce (Speedy) */
+.slide-down-bounce {
+    opacity: 0;
+    transform: translateY(-50px);
+    /* 上から */
+    transition: opacity 0.4s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* バウンス効果 */
+}
+
+.slide-down-bounce.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Split Text Animation */
+.js-split-text span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.js-split-text.is-inview span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.is-inview {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.is-inview {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Page Transition Animation */
+.transition-overlay-1,
+.transition-overlay-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: scaleX(1);
+    /* 初期状態はカバー */
+    transform-origin: left;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* 初回訪問時は遷移オーバーレイを隠す（ローディング画面のみ表示） */
+html:not(.visited) .transition-overlay-1,
+html:not(.visited) .transition-overlay-2 {
+    display: none;
+}
+
+/* 2回目以降はローディング画面を隠す */
+html.visited .loading-screen {
+    display: none !important;
+}
+
+.transition-overlay-1 {
+    background-color: #343434;
+    transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.transition-overlay-2 {
+    background-color: #D1597B;
+    transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1) 0.1s;
+}
+
+/* 遷移開始時（画面を隠す） */
+.is-transitioning .transition-overlay-1,
+.is-transitioning .transition-overlay-2 {
+    transform: scaleX(1);
+    transform-origin: left;
+    pointer-events: auto;
+}
+
+/* ページロード時（画面を表示） */
+.is-loaded .transition-overlay-1,
+.is-loaded .transition-overlay-2 {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+/* ロード時の遅延調整 */
+.is-loaded .transition-overlay-1 {
+    transition-delay: 0.1s;
+}
+
+.is-loaded .transition-overlay-2 {
+    transition-delay: 0s;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #343434;
+    z-index: 10000;
+    /* 最前面 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.is-loaded .loading-screen {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Loading Bars */
+.loading-bars {
+    display: flex;
+    gap: 8px;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bar {
+    width: 8px;
+    height: 20px;
+    background-color: #D1597B;
+    border-radius: 4px;
+    animation: loading-bar 1s ease-in-out infinite;
+}
+
+.bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes loading-bar {
+
+    0%,
+    100% {
+        height: 20px;
+    }
+
+    50% {
+        height: 60px;
+    }
+}
+
+/* Loading Text */
+.loading-text {
+    color: #D1597B;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* 英語フォント */
+    letter-spacing: 1px;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes loading-dots {
+
+    0%,
+    20% {
+        content: '';
+    }
+
+    40% {
+        content: '.';
+    }
+
+    60% {
+        content: '..';
+    }
+
+    80%,
+    100% {
+        content: '...';
+    }
+}
+
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.site-info {
+    display: inline-block;
+}
+
+/* 1200px以上でファーストビューを全画面表示 */
+@media (min-width: 1200px) {
+
+    .hero-section,
+    .top {
+        height: 100vh !important;
+        min-height: 700px;
+        /* コンテンツ確保のため最低高さも設定 */
+    }
+}
+
+/* App Page Styles */
+.app-section {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1088px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 280px);
+    gap: 60px 40px;
+    justify-content: center;
+}
+
+.app-item {
+    width: 280px;
+    height: 450px;
+    /* Changed from 400px to 450px */
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    /* Match left padding with image alignment */
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.app-item:hover {
+    transform: translateY(-10px);
+}
+
+.app-thumbnail {
+    width: 220px;
+    height: 220px;
+    background-color: #D9D9D9;
+    border-radius: 40px;
+    margin-bottom: 16px;
+    /* Gap: 16px */
+    flex-shrink: 0;
+}
+
+.app-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-title {
+    margin-top: 0px;
+    font-size: 16px;
+    color: #D1597B;
+    margin-bottom: 8px;
+    /* Gap: 8px */
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.app-desc {
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    /* Updated: 0 */
+    height: 60px;
+    /* 4 lines: 1.6 * 4 */
+    width: 220px;
+    /* Align with image width */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.app-meta {
+    margin-top: 8px;
+    /* Gap: 16px */
+    padding-top: 0;
+    width: 100%;
+}
+
+.meta-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+    /* Gap: 8px */
+}
+
+.meta-tech {
+    font-size: 11px;
+    color: #ccc;
+    line-height: 1.4;
+    margin: 0;
+    /* Reset margin */
+}
+
+/* Modal Styles */
+.app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-modal.is-active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 720px;
+    background-color: #666666;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.modal-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.modal-image {
+    width: 240px;
+    min-height: 280px;
+    background-color: #C0C0C0;
+    flex-shrink: 0;
+}
+
+.modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.modal-title {
+    font-size: 24px;
+    color: #D1597B;
+    margin-bottom: 16px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.modal-description {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.modal-skills {
+    margin-bottom: 24px;
+}
+
+.modal-skills-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-skills-list {
+    font-size: 13px;
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.modal-link {
+    display: inline-block;
+    padding: 12px 40px;
+    background-color: transparent;
+    color: #D1597B;
+    text-decoration: none;
+    border: 2px solid #D1597B;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-link:hover {
+    background-color: #D1597B;
+    color: #fff;
+    opacity: 1;
+}
+
+/* App Responsive */
+@media (max-width: 960px) {
+    .app-grid {
+        grid-template-columns: repeat(auto-fill, 280px);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 24px;
+        max-width: 90%;
+    }
+
+    .modal-inner {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .modal-image {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-description {
+        font-size: 13px;
+    }
+
+    .modal-skills-label {
+        font-size: 14px;
+    }
+
+    .modal-skills-list {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .app-grid {
+        grid-template-columns: 280px;
+        justify-content: center;
+    }
+}
+
+/* Portfolio Modal Styles */
+.portfolio-modal-trigger {
+    cursor: pointer;
+}
+
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-modal.is-active {
+    display: flex;
+}
+
+.portfolio-modal .modal-note {
+    font-size: 12px;
+    color: #ccc;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.portfolio-modal .modal-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.portfolio-modal .modal-link {
+    flex: 1;
+    padding: 12px 20px;
+}
+
+.portfolio-modal .modal-link.is-hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .portfolio-modal .modal-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .portfolio-modal .modal-link {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   SPA-Specific Styles
+   ======================================== */
+
+/* Page Section Visibility */
+.page-section {
+    display: none;
+}
+
+.page-section.is-active {
+    display: block;
+}
+
+/* Work & App page main layout (no sidebar) */
+#page-work .site-main,
+#page-app .site-main {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Home page keeps sidebar layout */
+#page-home .site-main {
+    margin-left: 100px;
+}
+
+@media (max-width: 960px) {
+    #page-home .site-main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* ========================================
+   Contact Page Styles
+   ======================================== */
+
+/* Contact page main layout */
+#page-contact .site-main {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Contact Top Section */
+.contact-top {
+    background-image: url('/assets/images/ContactTopImg.png');
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 80px 0;
+    background-color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.contact-row {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-row.full-width {
+    gap: 0;
+}
+
+.contact-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item-full {
+    width: 100%;
+}
+
+.contact-label {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.contact-input {
+    width: 100%;
+    height: 48px;
+    background-color: #fff;
+    border: none;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.contact-input-half {
+    max-width: 440px;
+}
+
+.contact-select {
+    width: 100%;
+    max-width: 440px;
+    height: 48px;
+    background-color: #fff;
+    border: none;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+.contact-select:focus {
+    outline: 2px solid #D1597B;
+}
+
+.contact-textarea {
+    width: 100%;
+    height: 160px;
+    background-color: #fff;
+    border: none;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    resize: none;
+}
+
+.contact-submit {
+    width: 100%;
+    height: 56px;
+    background-color: #D1597B;
+    border-radius: 100px;
+    color: #333;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    letter-spacing: 2px;
+}
+
+.contact-submit:hover {
+    background-color: #b04665;
+    color: #fff;
+}
+
+/* Contact Success Message */
+.contact-success {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-success p {
+    font-size: 18px;
+    line-height: 2;
+    color: #D1597B;
+}
+
+/* SP only line break */
+.sp-only {
+    display: none;
+}
+
+/* Contact Responsive - 960px */
+@media (max-width: 960px) {
+    .contact-form {
+        max-width: 450px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-input-half,
+    .contact-select {
+        max-width: 100%;
+    }
+
+    .contact-top .top-subtitle-2 {
+        display: none;
+    }
+
+    .sp-only {
+        display: inline;
+    }
+}
+
+/* Contact Responsive - 500px */
+@media (max-width: 500px) {
+    .contact-form-section {
+        padding: 60px 0;
+    }
+
+    .contact-form {
+        max-width: 340px;
+        padding: 0;
+    }
+
+    .contact-submit {
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   Vue.js SPA Overrides
+   ======================================== */
+
+/* In Vue, all pages are always visible (router handles switching) */
+.page-section {
+    display: block;
+}
+
+/* Remove the is-active requirement for page-section */
+.page-section.is-active {
+    display: block;
+}

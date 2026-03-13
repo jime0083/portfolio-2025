@@ -1762,7 +1762,6 @@ html.visited .loading-screen {
     height: 100%;
     z-index: 10000;
     display: none;
-    /* Hidden by default */
     align-items: center;
     justify-content: center;
 }
@@ -1777,73 +1776,99 @@ html.visited .loading-screen {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
     position: relative;
     width: 90%;
-    max-width: 800px;
-    background-color: #343434;
-    border-radius: 20px;
+    max-width: 720px;
+    background-color: #666666;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     z-index: 1;
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 40px;
-    color: #fff;
-    cursor: pointer;
-    line-height: 1;
-    z-index: 2;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 .modal-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 40px;
+    align-items: stretch;
 }
 
 .modal-image {
-    width: 100%;
-    height: 300px;
-    background-color: #D9D9D9;
+    width: 240px;
+    min-height: 280px;
+    background-color: #C0C0C0;
+    flex-shrink: 0;
 }
 
 .modal-body {
-    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
 }
 
 .modal-title {
-    font-size: 32px;
+    font-size: 24px;
     color: #D1597B;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: bold;
+    margin-top: 0;
 }
 
 .modal-description {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.modal-skills {
+    margin-bottom: 24px;
+}
+
+.modal-skills-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-skills-list {
+    font-size: 13px;
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .modal-link {
     display: inline-block;
     padding: 12px 40px;
-    background-color: #D1597B;
-    color: #fff;
+    background-color: transparent;
+    color: #D1597B;
     text-decoration: none;
-    border-radius: 30px;
+    border: 2px solid #D1597B;
+    border-radius: 0;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .modal-link:hover {
-    background-color: #b04665;
+    background-color: #D1597B;
+    color: #fff;
+    opacity: 1;
 }
 
 /* App Responsive */
@@ -1854,17 +1879,99 @@ html.visited .loading-screen {
     }
 }
 
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 24px;
+        max-width: 90%;
+    }
+
+    .modal-inner {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .modal-image {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-description {
+        font-size: 13px;
+    }
+
+    .modal-skills-label {
+        font-size: 14px;
+    }
+
+    .modal-skills-list {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 600px) {
     .app-grid {
         grid-template-columns: 280px;
         justify-content: center;
     }
+}
 
-    .modal-body {
-        padding: 24px;
+/* Portfolio Modal Styles */
+.portfolio-modal-trigger {
+    cursor: pointer;
+}
+
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-modal.is-active {
+    display: flex;
+}
+
+.portfolio-modal .modal-note {
+    font-size: 12px;
+    color: #ccc;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.portfolio-modal .modal-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.portfolio-modal .modal-link {
+    flex: 1;
+    padding: 12px 20px;
+}
+
+.portfolio-modal .modal-link.is-hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .portfolio-modal .modal-buttons {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .modal-title {
-        font-size: 24px;
+    .portfolio-modal .modal-link {
+        width: 100%;
     }
 }

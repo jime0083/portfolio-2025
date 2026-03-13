@@ -21,64 +21,99 @@
                     <div class="section-header">
                         <h2 class="js-split-text">Portfolio</h2>
                     </div>
-                    
-                    <!-- Item 1: Garden Office -->
-                     <a href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1">
-                        <article href="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1" class="portfolio-item portfolio-item1 slide-down-bounce">
-                            <div class="portfolio-thumbnail">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-1.png" alt="造園系企業コーポレートサイト">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
-                                <div class="portfolio-overlay">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="overlay-icon">
-                                    <span class="overlay-text">イベント<br><small>CLASS & EVENT</small></span>
-                                </div>
-                                <span class="portfolio-tag">Webデザイン</span>
-                            </div>
-                            <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
-                        </article>
-                    </a>
 
-                    <!-- Item 2: Jirabai -->
-                    <a href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1">
-                        <article href="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1" class="portfolio-item portfolio-item2 slide-down-bounce">
-                            <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-2.png" alt="地図アプリ「ジラバイ」">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
-                                <span class="portfolio-tag">アプリデザイン・開発</span>
-                            </div>
+                    <!-- Item 1: 教育系企業コーポレートサイト -->
+                    <article class="portfolio-item portfolio-item1 slide-down-bounce portfolio-modal-trigger"
+                        data-title="教育系企業コーポレートサイト"
+                        data-desc="教育系企業のコーポレートサイトを作成させていただきました"
+                        data-note="※実案件ではWordPressで作成しましたが、"
+                        data-skills="Javascript,HTML,CSS,Git,WordPress"
+                        data-site-url=""
+                        data-design-url="https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1">
+                        <div class="portfolio-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-1.png" alt="教育系企業コーポレートサイト">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                            <span class="portfolio-tag">Webデザイン</span>
+                        </div>
+                        <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
+                    </article>
+
+                    <!-- Item 2: 造園系企業コーポレートサイト -->
+                    <article class="portfolio-item portfolio-item2 slide-down-bounce portfolio-modal-trigger"
+                        data-title="造園企業コーポレートサイト"
+                        data-desc="造園系企業のコーポレートサイトを作成させていただきました"
+                        data-note="※実案件ではWordPressで作成しましたが、"
+                        data-skills="Javascript,HTML,CSS,Git,WordPress"
+                        data-site-url=""
+                        data-design-url="https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1">
+                        <div class="portfolio-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-2.png" alt="造園系企業コーポレートサイト">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                            <span class="portfolio-tag">アプリデザイン・開発</span>
+                        </div>
                         <h3 class="portfolio-title">造園系企業コーポレートサイト</h3>
-                        </article>
-                    </a>
+                    </article>
                 </div>
 
                 <!-- Right Column: portfolio-section2 -->
                 <div class="portfolio-section2">
-                    <!-- Item 3: Micro Habit Runner -->
-                    <a href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490">
-                        <article href="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490" class="portfolio-item portfolio-item3 slide-down-bounce">
-                            <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-3.png" alt="ヘルスケアアプリ「Micro Habit Runner」">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
-                            <span class="portfolio-tag">Webデザイン・開発</span>
-                            </div>
-                        <h3 class="portfolio-title">エンジニア・個人開発者向け名刺アプリ「ソクメイシ」</h3>
-                        </article>
-                    </a>
-
-                    <!-- Item 4: Dasaowa -->
-                    <a href="https://nukebuy.web.app/">
-                    <article href="https://nukebuy.web.app/" class="portfolio-item portfolio-item4 slide-down-bounce">
+                    <!-- Item 3: ソクメイシ -->
+                    <article class="portfolio-item portfolio-item3 slide-down-bounce portfolio-modal-trigger"
+                        data-title="エンジニア・個人開発者向け名刺アプリ「ソクメイシ」"
+                        data-desc="エンジニアや個人開発者向けの名刺作成アプリを開発しました"
+                        data-note=""
+                        data-skills="Javascript(ReactNative),HTML,CSS,Git,Firebase"
+                        data-site-url="https://apps.apple.com/us/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7/id6755348490"
+                        data-design-url="">
                         <div class="portfolio-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port4.png" alt="ファッション系アプリ「ダサオワ」">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port-3.png" alt="ソクメイシ">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
+                            <span class="portfolio-tag">Webデザイン・開発</span>
+                        </div>
+                        <h3 class="portfolio-title">エンジニア・個人開発者向け名刺アプリ「ソクメイシ」</h3>
+                    </article>
+
+                    <!-- Item 4: ヌケバイ -->
+                    <article class="portfolio-item portfolio-item4 slide-down-bounce portfolio-modal-trigger"
+                        data-title="ヘルスケア系アプリ「ヌケバイ」"
+                        data-desc="ヘルスケア管理をサポートするアプリを開発しました"
+                        data-note=""
+                        data-skills="Javascript(Vue.js),HTML,CSS,Git,Firebase"
+                        data-site-url="https://nukebuy.web.app/"
+                        data-design-url="">
+                        <div class="portfolio-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/port4.png" alt="ヌケバイ">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/link 1.png" alt="Link" class="portfolio-link-icon">
                             <span class="portfolio-tag">アプリデザイン・フロントエンド開発</span>
                         </div>
                         <h3 class="portfolio-title">ヘルスケア系アプリ「ヌケバイ」</h3>
                     </article>
-                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- Portfolio Modal -->
+        <div id="portfolio-modal" class="portfolio-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-inner">
+                    <div class="modal-image"></div>
+                    <div class="modal-body">
+                        <h2 class="modal-title"></h2>
+                        <p class="modal-description"></p>
+                        <p class="modal-note"></p>
+                        <div class="modal-skills">
+                            <span class="modal-skills-label">対応言語・スキル</span>
+                            <p class="modal-skills-list"></p>
+                        </div>
+                        <div class="modal-buttons">
+                            <a href="#" class="modal-link modal-site-link" target="_blank" rel="noopener noreferrer">サイトをチェック</a>
+                            <a href="#" class="modal-link modal-design-link" target="_blank" rel="noopener noreferrer">デザインをチェック</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="profile" class="profile-section">
             <div class="portfolio-container">

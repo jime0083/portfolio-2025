@@ -122,7 +122,7 @@ get_header();
                 ];
 
                 foreach ($apps as $app) : ?>
-                    <div class="app-item fade-in-up" data-app-id="<?php echo esc_attr($app['id']); ?>" data-full-desc="<?php echo esc_attr($app['full_desc']); ?>" data-url="<?php echo esc_attr($app['url']); ?>">
+                    <div class="app-item fade-in-up" data-app-id="<?php echo esc_attr($app['id']); ?>" data-full-desc="<?php echo esc_attr($app['full_desc']); ?>" data-url="<?php echo esc_attr($app['url']); ?>" data-skills="<?php echo esc_attr($app['skills']); ?>">
                         <div class="app-thumbnail">
                             <!-- Image will be #D9D9D9 by CSS -->
                         </div>
@@ -144,13 +144,16 @@ get_header();
     <div id="app-modal" class="app-modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
             <div class="modal-inner">
                 <div class="modal-image"></div>
                 <div class="modal-body">
                     <h2 class="modal-title"></h2>
                     <p class="modal-description"></p>
-                    <a href="#" class="modal-link" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+                    <div class="modal-skills">
+                        <span class="modal-skills-label">対応言語・スキル</span>
+                        <p class="modal-skills-list"></p>
+                    </div>
+                    <a href="#" class="modal-link" target="_blank" rel="noopener noreferrer">アプリをチェックする</a>
                 </div>
             </div>
         </div>

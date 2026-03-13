@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(git subtree split --prefix spa -b gh-pages)",
+      "Bash(git push port-2025 gh-pages --force)",
+      "Bash(git push port-2025 master)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git subtree:*)",
+      "Bash(git push:*)",
+      "Bash(npm install)"
+    ]
+  }
+}
