@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hajime Kurita - Portfolio</title>
+    <script>
+        if (sessionStorage.getItem('visited') || sessionStorage.getItem('from_internal')) {
+            document.documentElement.classList.add('visited');
+            sessionStorage.setItem('visited', 'true');
+            sessionStorage.removeItem('from_internal');
+        } else {
+            sessionStorage.setItem('visited', 'true');
+        }
+    </script>
+  <script type="module" crossorigin src="./assets/index-dMd37E9A.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-ClImy7D1.css">
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
