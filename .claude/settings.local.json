@@ -11,7 +11,11 @@
       "Bash(git subtree:*)",
       "Bash(git push:*)",
       "Bash(npm install)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(cd /Users/jime0083/Local\\\\ Sites/port-2025/app/public/wp-content/themes/portfolio-2025/spa-vue && npm run preview:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run deploy)",
+      "Bash(npm create:*)"
     ]
   }
 }
