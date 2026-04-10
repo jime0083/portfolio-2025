@@ -26,7 +26,10 @@
                 <img :src="app.image" :alt="app.title">
               </div>
               <div class="app-info">
-                <h3 class="app-title">{{ app.title }}</h3>
+                <div class="app-title-row">
+                  <h3 class="app-title">{{ app.title }}</h3>
+                  <span v-if="app.isDeveloping" class="app-developing-tag">開発中</span>
+                </div>
                 <p class="app-desc">{{ app.desc }}</p>
                 <div class="app-meta">
                   <span class="meta-label">対応言語・スキル</span>
@@ -70,7 +73,9 @@ const appItems = [
     url: '#',
     skills: 'Javascript(React),HTML,CSS,Git',
     image: baseUrl + 'assets/images/skill-sheat.png',
-    isEnded: false
+    popupImage: baseUrl + 'assets/images/開発中.png',
+    isEnded: false,
+    isDeveloping: true
   },
   {
     id: 'metronome',
@@ -80,16 +85,19 @@ const appItems = [
     url: '#',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/metronome-mega-max.png',
-    isEnded: false
+    popupImage: baseUrl + 'assets/images/開発中.png',
+    isEnded: false,
+    isDeveloping: true
   },
   {
     id: '3tap-video',
     title: '3 Tap Video',
     desc: 'iPhoneの動画を3タップ以内で動画共有。TwitterなどのURLの動画を簡単に保存できるアプリ',
     fullDesc: 'お気に入りのSNS動画を素早く保存・共有するためのアプリです。',
-    url: '#',
+    url: 'https://apps.apple.com/jp/app/3tapvideo-%E8%83%8C%E9%9D%A2%E3%82%BF%E3%83%83%E3%83%97%E9%8C%B2%E7%94%BB%E3%82%A2%E3%83%97%E3%83%AA/id6756760051',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
-    image: baseUrl + 'assets/images/3tapvideo.png',
+    image: baseUrl + 'assets/images/3TapVideo.png',
+    popupImage: baseUrl + 'assets/images/3TapVideo iPad用 (1).png',
     isEnded: false
   },
   {
@@ -97,9 +105,10 @@ const appItems = [
     title: '2TapRecoder',
     desc: 'iPhoneの音声を2タップして録音開始。バックグラウンド録音も可能な録音アプリ',
     fullDesc: '会議やメモを逃さないための超高速録音アプリです。',
-    url: '#',
+    url: 'https://apps.apple.com/jp/app/2taprecoder-%E8%83%8C%E9%9D%A2%E3%82%BF%E3%83%83%E3%83%97%E9%8C%B2%E9%9F%B3%E3%82%A2%E3%83%97%E3%83%AA/id6756510630',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
-    image: baseUrl + 'assets/images/2taprecoder.png',
+    image: baseUrl + 'assets/images/2TapRecoder.png',
+    popupImage: baseUrl + 'assets/images/2TapVideo iPad用.png',
     isEnded: false
   },
   {
@@ -107,9 +116,10 @@ const appItems = [
     title: 'Batsugaku',
     desc: 'フォロワーが「サボり」を監視！エンジニア向け絶対に学習をサボらせない学習習慣化アプリ',
     fullDesc: 'SNSでの技術的な発信を最大化するための分析ツールです。',
-    url: '#',
+    url: 'https://apps.apple.com/jp/app/batsugaku-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91%E5%AD%A6%E7%BF%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%82%A2%E3%83%97%E3%83%AA/id6758074322',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/batsugaku.png',
+    popupImage: baseUrl + 'assets/images/Batsugaku iPad.png',
     isEnded: false
   },
   {
@@ -120,17 +130,19 @@ const appItems = [
     url: '',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/capsai.png',
+    popupImage: baseUrl + 'assets/images/No Image.png',
     isEnded: true,
-    endReason: 'アダルトコンテンツとみなされ外部決済サービスが利用できなくなったため'
+    endReason: '同棲予定の彼女と別れて開発者である自分が使わないアプリになりモチベーションがなくなった'
   },
   {
     id: 'sokumeishi',
     title: 'ソクメイシ',
     desc: '30秒で作成可能！フリーランスエンジニア・デザイナー向け名刺作成アプリ',
     fullDesc: '30秒でプロ仕様の名刺が作成できるアプリ。',
-    url: '#',
+    url: 'https://apps.apple.com/jp/app/%E3%82%BD%E3%82%AF%E3%83%A1%E3%82%A4%E3%82%B7-10%E5%88%86%E3%81%A7%E5%90%8D%E5%88%BA%E4%BD%9C%E6%88%90/id6755348490',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/sokumeishi.png',
+    popupImage: baseUrl + 'assets/images/ソクメイシ iPad用.png',
     isEnded: false
   },
   {
@@ -141,8 +153,9 @@ const appItems = [
     url: '',
     skills: 'Javascript(ReactNative),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/shuchuchu.png',
+    popupImage: baseUrl + 'assets/images/No Image.png',
     isEnded: true,
-    endReason: 'サービス終了理由をここに設定してください'
+    endReason: 'ユーザーを全く獲得できないまま半年が経ちモチベーションを維持できなくなった'
   },
   {
     id: 'nukebai',
@@ -152,8 +165,9 @@ const appItems = [
     url: '',
     skills: 'Javascript(Vue.js),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/nukebye.png',
+    popupImage: baseUrl + 'assets/images/nukebye iPad.png',
     isEnded: true,
-    endReason: 'サービス終了理由をここに設定してください'
+    endReason: 'アダルトコンテンツとみなされ外部決済サービスが利用できなくなった'
   }
 ]
 
@@ -224,5 +238,34 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.app-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 220px;
+  gap: 8px;
+}
+
+.app-title {
+  margin: 0;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.app-developing-tag {
+  background-color: #D1597B;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  width: 45px;
+  height: 25px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

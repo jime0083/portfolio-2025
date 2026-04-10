@@ -4,7 +4,7 @@
     <div class="popup-content">
       <div class="popup-inner">
         <div class="popup-image">
-          <img v-if="item?.image" :src="item.image" :alt="item?.title">
+          <img v-if="item?.popupImage || item?.image" :src="item?.popupImage || item?.image" :alt="item?.title">
         </div>
         <div class="popup-body">
           <h2 class="popup-title">{{ item?.title }}</h2>
@@ -100,8 +100,8 @@ onUnmounted(() => {
 }
 
 .popup-image {
-  width: 240px;
-  min-height: 280px;
+  width: 300px;
+  height: 225px;
   background-color: #C0C0C0;
   flex-shrink: 0;
   display: flex;

@@ -80,7 +80,7 @@
                 @click="openUrl(portfolioItems[3].siteUrl)"
               >
                 <div class="portfolio-thumbnail">
-                  <img :src="baseUrl + 'assets/images/port-3.png'" alt="ソクメイシ">
+                  <img :src="baseUrl + 'assets/images/ソクメイシ iPad用.png'" alt="ソクメイシ">
                   <img :src="baseUrl + 'assets/images/link 1.png'" alt="Link" class="portfolio-link-icon">
                   <span class="portfolio-tag">Webデザイン・開発</span>
                 </div>

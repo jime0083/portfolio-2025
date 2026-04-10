@@ -1666,8 +1666,8 @@ html.visited .loading-screen {
 
 .app-item {
     width: 280px;
-    height: 450px;
-    /* Changed from 400px to 450px */
+    height: 460px;
+    /* Changed from 450px to 460px */
     background-color: rgba(68, 68, 68, 0.8);
     border-radius: 10px;
     padding: 30px;
@@ -1733,7 +1733,7 @@ html.visited .loading-screen {
     margin-top: 8px;
     /* Gap: 16px */
     padding-top: 0;
-    width: 100%;
+    max-width: 220px;
 }
 
 .meta-label {
