@@ -1750,7 +1750,8 @@ html.visited .loading-screen {
     color: #ccc;
     line-height: 1.4;
     margin: 0;
-    /* Reset margin */
+    max-width: 220px;
+    word-break: break-all;
 }
 
 /* Modal Styles */
