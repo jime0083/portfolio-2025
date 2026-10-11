@@ -13,16 +13,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import SiteHeader from './components/SiteHeader.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
 
-const route = useRoute()
+const router = useRouter()
 const isLoaded = ref(false)
 const isTransitioning = ref(false)
 const showLoading = ref(!document.documentElement.classList.contains('visited'))
+
+// カバーアニメーションが画面を覆いきるまでの時間(ms)
+// CSS の transition 0.6s + overlay-2 の遅延 0.1s に対応
+const COVER_DURATION = 700
 
 onMounted(() => {
   setTimeout(() => {
@@ -31,15 +35,25 @@ onMounted(() => {
   }, showLoading.value ? 500 : 0)
 })
 
-watch(() => route.path, (newPath, oldPath) => {
-  if (oldPath && newPath !== oldPath) {
-    isLoaded.value = false
-    isTransitioning.value = true
+// 遷移開始：カバーアニメーションで画面を覆いきるまで遷移を確定させない。
+// この間はルーターが遷移先へ切り替わらないため、元のページを表示し続ける。
+router.beforeEach(async (to, from) => {
+  if (!from.name || to.path === from.path) return true
 
-    setTimeout(() => {
-      isTransitioning.value = false
-      isLoaded.value = true
-    }, 600)
-  }
+  isLoaded.value = false
+  isTransitioning.value = true
+
+  // カバーが画面全体を覆うまで待ってから遷移を確定させる
+  await new Promise((resolve) => setTimeout(resolve, COVER_DURATION))
+  return true
+})
+
+// 遷移確定後：遷移先ページはオーバーレイの裏で描画済みなので、
+// ここでリビール（オーバーレイを右へ引く）を開始し、遷移先ページを表示する。
+router.afterEach((to, from) => {
+  if (!from.name || to.path === from.path) return
+
+  isTransitioning.value = false
+  isLoaded.value = true
 })
 </script>

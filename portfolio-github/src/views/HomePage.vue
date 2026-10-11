@@ -42,11 +42,11 @@
                 @click="openUrl(portfolioItems[0].siteUrl)"
               >
                 <div class="portfolio-thumbnail">
-                  <img :src="baseUrl + 'assets/images/port-1.png'" alt="教育系企業コーポレートサイト">
+                  <img :src="baseUrl + 'assets/images/recruit-it.png'" alt="IT系企業リクルートサイト">
                   <img :src="baseUrl + 'assets/images/link 1.png'" alt="Link" class="portfolio-link-icon">
-                  <span class="portfolio-tag">Webデザイン</span>
+                  <span class="portfolio-tag">Webデザイン・開発</span>
                 </div>
-                <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
+                <h3 class="portfolio-title">IT系企業リクルートサイト</h3>
               </article>
 
               <article
@@ -54,18 +54,30 @@
                 @click="openUrl(portfolioItems[1].siteUrl)"
               >
                 <div class="portfolio-thumbnail">
-                  <img :src="baseUrl + 'assets/images/port-2.png'" alt="造園系企業コーポレートサイト">
+                  <img :src="baseUrl + 'assets/images/tax-office.png'" alt="税理士事務所コーポレートサイト">
                   <img :src="baseUrl + 'assets/images/link 1.png'" alt="Link" class="portfolio-link-icon">
-                  <span class="portfolio-tag">アプリデザイン・開発</span>
+                  <span class="portfolio-tag">Webデザイン・開発</span>
                 </div>
-                <h3 class="portfolio-title">造園系企業コーポレートサイト</h3>
+                <h3 class="portfolio-title">税理士事務所コーポレートサイト</h3>
+              </article>
+
+              <article
+                class="portfolio-item portfolio-item5 slide-down-bounce"
+                @click="openUrl(portfolioItems[2].siteUrl)"
+              >
+                <div class="portfolio-thumbnail">
+                  <img :src="baseUrl + 'assets/images/port-1.png'" alt="教育系企業コーポレートサイト">
+                  <img :src="baseUrl + 'assets/images/link 1.png'" alt="Link" class="portfolio-link-icon">
+                  <span class="portfolio-tag">Webデザイン</span>
+                </div>
+                <h3 class="portfolio-title">教育系企業コーポレートサイト</h3>
               </article>
             </div>
 
             <div class="portfolio-section2">
               <article
                 class="portfolio-item portfolio-item3 slide-down-bounce"
-                @click="openUrl(portfolioItems[2].siteUrl)"
+                @click="openUrl(portfolioItems[3].siteUrl)"
               >
                 <div class="portfolio-thumbnail">
                   <img :src="baseUrl + 'assets/images/Batsugaku-top.png'" alt="Batsugaku">
@@ -76,8 +88,20 @@
               </article>
 
               <article
+                class="portfolio-item portfolio-item6 slide-down-bounce"
+                @click="openUrl(portfolioItems[4].siteUrl)"
+              >
+                <div class="portfolio-thumbnail">
+                  <img :src="baseUrl + 'assets/images/nukebuy.png'" alt="ヌケバイ">
+                  <img :src="baseUrl + 'assets/images/link 1.png'" alt="Link" class="portfolio-link-icon">
+                  <span class="portfolio-tag">アプリデザイン・開発</span>
+                </div>
+                <h3 class="portfolio-title">ヌけないAVで無駄にする時間を無くす「ヌケバイ」</h3>
+              </article>
+
+              <article
                 class="portfolio-item portfolio-item4 slide-down-bounce"
-                @click="openUrl(portfolioItems[3].siteUrl)"
+                @click="openUrl(portfolioItems[5].siteUrl)"
               >
                 <div class="portfolio-thumbnail">
                   <img :src="baseUrl + 'assets/images/ソクメイシ iPad用.png'" alt="ソクメイシ">
@@ -143,6 +167,22 @@ let typeTimeout = null
 
 const portfolioItems = [
   {
+    title: "IT系企業リクルートサイト",
+    desc: "IT系企業のリクルートサイトを作成させていただきました",
+    note: "",
+    skills: "Javascript,HTML,CSS,Git",
+    siteUrl: "https://port3104.com/",
+    designUrl: ""
+  },
+  {
+    title: "税理士事務所コーポレートサイト",
+    desc: "税理士事務所のコーポレートサイトを作成させていただきました",
+    note: "",
+    skills: "Javascript,HTML,CSS,Git",
+    siteUrl: "https://jime0083.github.io/olive/",
+    designUrl: ""
+  },
+  {
     title: "教育系企業コーポレートサイト",
     desc: "教育系企業のコーポレートサイトを作成させていただきました",
     note: "※実案件ではWordPressで作成しましたが、",
@@ -151,19 +191,19 @@ const portfolioItems = [
     designUrl: "https://www.figma.com/design/7DwKDpnTIOTrrXvZWmtyqo/%E5%AD%A6%E7%BF%92%E5%A1%BE%E3%83%9D%E3%83%BC%E3%83%88?node-id=0-1&t=IEUfA94LH48VgJul-1"
   },
   {
-    title: "造園企業コーポレートサイト",
-    desc: "造園系企業のコーポレートサイトを作成させていただきました",
-    note: "※実案件ではWordPressで作成しましたが、",
-    skills: "Javascript,HTML,CSS,Git,WordPress",
-    siteUrl: "https://jime0083.github.io/landscapingPort/#/",
-    designUrl: "https://www.figma.com/design/GFCL9UcXDSLEm824LC1T6f/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA-green?node-id=0-1&t=17TGWNZQcz4rjzOM-1"
-  },
-  {
     title: "エンジニア向け学習習慣化アプリ「Batsugaku」",
     desc: "フォロワーが「サボり」を監視！エンジニア向け絶対に学習をサボらせない学習習慣化アプリ",
     note: "",
     skills: "Javascript(ReactNative),HTML,CSS,Git,Firebase",
     siteUrl: "https://apps.apple.com/jp/app/batsugaku-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%90%91%E3%81%91%E5%AD%A6%E7%BF%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%82%A2%E3%83%97%E3%83%AA/id6758074322",
+    designUrl: ""
+  },
+  {
+    title: "ヌけないAVで無駄にする時間を無くす「ヌケバイ」",
+    desc: "ヌけないAVで無駄にする時間を無くすアプリ「ヌケバイ」を開発しました",
+    note: "",
+    skills: "Javascript,HTML,CSS,Git,Firebase",
+    siteUrl: "https://nukebuy.web.app/",
     designUrl: ""
   },
   {

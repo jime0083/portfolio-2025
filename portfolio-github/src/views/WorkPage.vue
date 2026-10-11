@@ -36,7 +36,7 @@
 
             <div class="field-item reverse">
               <div class="field-image fade-in-right">
-                <img :src="baseUrl + 'assets/images/work1.png'" alt="Webサイト制作">
+                <img :src="baseUrl + 'assets/images/prof2.png'" alt="Webサイト制作">
               </div>
               <div class="field-main fade-in-left">
                 <div class="field-header">
@@ -53,7 +53,7 @@
 
             <div class="field-item">
               <div class="field-image fade-in-left">
-                <img :src="baseUrl + 'assets/images/work3.png'" alt="Webデザイン">
+                <img :src="baseUrl + 'assets/images/web-design.jpg'" alt="Webデザイン">
               </div>
               <div class="field-main fade-in-right">
                 <div class="field-header">

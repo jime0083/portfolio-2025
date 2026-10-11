@@ -66,18 +66,6 @@ const containerRef = ref(null)
 
 const appItems = [
   {
-    id: 'skill-sheet',
-    title: 'スキルシートメーカー',
-    desc: 'エンジニア向けにスキルシート作成ツールも無料で利用できExcel,Sheet,Base形式でダウンロードできます',
-    fullDesc: '無料で使えるエンジニア向けスキルシート作成ツール。作ったスキルシートはPDFだけでなくWordファイルやExcelファイルでもダウンロード可能',
-    url: '#',
-    skills: 'Javascript(React),HTML,CSS,Git',
-    image: baseUrl + 'assets/images/skill-sheat.png',
-    popupImage: baseUrl + 'assets/images/開発中.png',
-    isEnded: false,
-    isDeveloping: true
-  },
-  {
     id: 'metronome',
     title: 'Metronome-Mega-Max',
     desc: '音楽練習に必要なメトロノーム・タイマー・音楽再生機能がひとつのアプリで完結！',
@@ -88,6 +76,18 @@ const appItems = [
     popupImage: baseUrl + 'assets/images/開発中.png',
     isEnded: false,
     isDeveloping: true
+  },
+  {
+    id: 'skill-sheet',
+    title: 'スキルシートメーカー',
+    desc: 'エンジニア向けにスキルシート作成ツールも無料で利用できExcel,Sheet,Base形式でダウンロードできます',
+    fullDesc: '無料で使えるエンジニア向けスキルシート作成ツール。作ったスキルシートはPDFだけでなくWordファイルやExcelファイルでもダウンロード可能',
+    url: 'https://jime0083.github.io/engineer-paper/#/',
+    skills: 'Javascript(React),HTML,CSS,Git',
+    image: baseUrl + 'assets/images/skill-sheat.png',
+    popupImage: baseUrl + 'assets/images/skill-sheet-maker.png',
+    isEnded: false,
+    isDeveloping: false
   },
   {
     id: '3tap-video',
@@ -162,12 +162,11 @@ const appItems = [
     title: 'ヌケバイ',
     desc: '次はいつ？テストの日程を身で管理し忘れ防止の参考にする',
     fullDesc: 'ヌけないAVで無駄にする時間を無くす',
-    url: '',
+    url: 'https://nukebuy.web.app/',
     skills: 'Javascript(Vue.js),HTML,CSS,Git,Firebase',
     image: baseUrl + 'assets/images/nukebye.png',
-    popupImage: baseUrl + 'assets/images/nukebye iPad.png',
-    isEnded: true,
-    endReason: 'アダルトコンテンツとみなされ外部決済サービスが利用できなくなった'
+    popupImage: baseUrl + 'assets/images/nukebuy.png',
+    isEnded: false
   }
 ]
 

@@ -15,7 +15,19 @@
       "Bash(cd /Users/jime0083/Local\\\\ Sites/port-2025/app/public/wp-content/themes/portfolio-2025/spa-vue && npm run preview:*)",
       "Bash(npm install:*)",
       "Bash(npm run deploy)",
-      "Bash(npm create:*)"
+      "Bash(npm create:*)",
+      "Bash(grep -rnioE '#[0-9a-fA-F]{3,8}\\\\b|rgba?\\\\\\([^\\)]*\\\\\\)|hsla?\\\\\\([^\\)]*\\\\\\)' . --include=\"*.vue\" --include=\"*.css\")",
+      "Bash(grep -rhioE '#[0-9a-fA-F]{3,8}\\\\b|rgba?\\\\\\([^\\)]*\\\\\\)|hsla?\\\\\\([^\\)]*\\\\\\)' . --include=\"*.vue\" --include=\"*.css\")",
+      "Bash(grep -rliE '#[0-9a-fA-F]{3,8}|rgba?\\\\\\(' . --include=\"*.vue\" --include=\"*.css\")",
+      "Bash(cp \"/Users/jime0083/Downloads/Mask group \\(24\\).png\" \"recruit-it.png\")",
+      "Bash(cp \"/Users/jime0083/Downloads/Mask group \\(25\\).png\" \"tax-office.png\")",
+      "Bash(cp \"/Users/jime0083/Downloads/Mask group \\(26\\).png\" \"nukebuy.png\")",
+      "Bash(grep -nA8 '^\\\\.portfolio-thumbnail \\\\{' style.css)",
+      "Bash(grep -nB1 'aspect-ratio' style.css)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"public/assets/images/prof2.png\")",
+      "Read(//Users/jime0083/aishin-wordpress/wp-content/themes/aishin/assets/images/opt/**)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/jime0083/aishin-wordpress/wp-content/themes/aishin/assets/images/opt/IMG-W03.jpg\")",
+      "Bash(awk ' *)"
     ]
   }
 }

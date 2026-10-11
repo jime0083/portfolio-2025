@@ -101,7 +101,7 @@ onUnmounted(() => {
 
 .popup-image {
   width: 300px;
-  height: 225px;
+  height: 200px;
   background-color: #C0C0C0;
   flex-shrink: 0;
   display: flex;
@@ -198,7 +198,7 @@ onUnmounted(() => {
 
   .popup-image {
     width: 100%;
-    min-height: 200px;
+    aspect-ratio: 3 / 2;
   }
 }
 </style>

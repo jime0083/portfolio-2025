@@ -298,7 +298,7 @@ ul {
     margin: 0;
 }
 
-.portfolio-section1 .portfolio-item1 {
+.portfolio-section1 .portfolio-item:not(:last-child) {
     margin-bottom: 160px;
 }
 
@@ -311,7 +311,7 @@ ul {
     /* 上部に51pxの空白 */
 }
 
-.portfolio-section2 .portfolio-item3 {
+.portfolio-section2 .portfolio-item:not(:last-child) {
     margin-bottom: 160px;
 }
 
@@ -325,7 +325,7 @@ ul {
 .portfolio-thumbnail {
     position: relative;
     width: 480px;
-    aspect-ratio: 480 / 365;
+    aspect-ratio: 480 / 320;
     /* アスペクト比を固定してサイズを統一 */
     margin-bottom: 15px;
     border-radius: 4px;
@@ -445,7 +445,7 @@ ul {
 
     .portfolio-thumbnail {
         width: 360px;
-        aspect-ratio: 360 / 240;
+        aspect-ratio: 360 / 270;
     }
 
     .portfolio-thumbnail img {
@@ -541,7 +541,7 @@ ul {
 
     .portfolio-thumbnail {
         width: 480px;
-        aspect-ratio: 480 / 360;
+        aspect-ratio: 480 / 320;
         /* アスペクト比変更 */
     }
 
@@ -608,7 +608,7 @@ ul {
 
     .portfolio-thumbnail {
         width: 100%;
-        aspect-ratio: 360 / 240;
+        aspect-ratio: 360 / 270;
     }
 
     .portfolio-thumbnail img {
